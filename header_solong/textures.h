@@ -1,9 +1,14 @@
+#ifndef TEXTURES_H
+#define TEXTURES_H
+
 typedef struct s_textures {
-	void *player_img; //! P
-	void *wall_img; //! 1
-	void *exit_img; //! E
-	void *collectible_img; //! C
-	void *empty_img; //! 0§
-//*	void *enemy_img; 
+	void *player; //! P
+	void *wall; //! 1
+	void *floor; //! 0§
+	void *collectible; //! C
+	void *exit_open; //! E
+	void *exit_closed; //! E
 
 } t_textures;
+
+#endif

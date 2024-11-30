@@ -1,4 +1,3 @@
-
 #include "header_solong/fonction.h"
 
 void	remove_newline_in_line(char *line)

@@ -1,6 +1,6 @@
 NAME = so_long
 GCC = gcc
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
 MKDIR = mkdir -p
 RM = rm -f
 OBJDIR = objects
@@ -30,10 +30,18 @@ GNL_LIB = $(GNL_DIR)/libgnl.a
 
 SRC =	utils \
 		main \
-		wall_validation \
 		open_map \
+		wall_validation \
 		wall_valid_utils \
-		remove_new_line
+		remove_new_line \
+		map_is_valid \
+		map_utils \
+		map_utils2 \
+		map_setup \
+		find_player \
+		find_item \
+		find_exit \
+		load_textures
 
 SRCS = $(addsuffix .c, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))

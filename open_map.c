@@ -1,31 +1,13 @@
 #include "gnl/get_next_line.h"
 #include "header_solong/fonction.h"
 
-
-// Comptez le nombre de lignes dans un fichier
-int	count_lines(char *map_name)
-{
-	char	*line;
-	int		lines_count = 0;
-	int		fd;
-
-	fd = open_new_map(map_name);
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		free(line);
-		lines_count++;
-	}
-	close(fd);
-	return lines_count;
-}
-
 // Ouvrir un fichier et retourner le descripteur de fichier
 int open_new_map(char *map_name)
 {
 	int	fd;
 
 	fd = open(map_name, O_RDONLY);
-	ft_printf("fd = %d\n", fd);
+	//$ ft_printf("fd = %d\n", fd);
 	if (fd < 0)
 		ft_exit_error("Error\nFailed to open map file");
 	return fd;
@@ -62,6 +44,8 @@ char **open_and_read_map(char *map_name)
 	lines_count = count_lines(map_name);
     // Rouvrir le fichier pour lire les lignes
     fd = open_new_map(map_name);
+
+	//$ ft_printf("fd = %d\n", fd);
 	//$ ft_printf("fd open and read = %d\n", fd);
     // Allouer de l'espace pour la carte
     map = malloc(sizeof(char *) * (lines_count + 1));
@@ -69,7 +53,7 @@ char **open_and_read_map(char *map_name)
 		ft_exit_error("Error\nFailed to allocate memory for map");
     // Lire les lignes et les stocker dans `map`
 	map = read_map(fd);
-	remove_all_newlines(map);
     close(fd);
+	remove_all_newlines(map);
     return (map);
 }
