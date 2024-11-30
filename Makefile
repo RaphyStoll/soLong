@@ -1,6 +1,8 @@
+#-fsanitize=address
+
 NAME = so_long
 GCC = gcc
-FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 MKDIR = mkdir -p
 RM = rm -f
 OBJDIR = objects

@@ -3,8 +3,7 @@
 
 # include "../gnl/get_next_line.h"
 # include "../ft_printf/ft_printf.h"
-# include "maps.h"
-# include "textures.h"
+# include "game.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -33,16 +32,16 @@ int	count_player(t_map *map);
 void free_map(t_map *map);
 
 //! find_player
-int find_player_x(t_map *map);
-int find_player_y(t_map *map);
+int find_player_x(t_game *game);
+int find_player_y(t_game *game);
 
 //! find_exit
-int find_exit_x(t_map *map);
-int find_exit_y(t_map *map);
+int find_exit_x(t_game *game);
+int find_exit_y(t_game *game);
 
 //! find_item
-int find_item_x(t_map *map);
-int find_item_y(t_map *map);
+int find_item_x(t_game *game);
+int find_item_y(t_game *game);
 
 //! remove_new_line
 void	remove_all_newlines(char **map);
@@ -54,8 +53,9 @@ char **read_map(int fd);
 int open_new_map(char *map_name);
 
 //! textures
-void load_textures(t_textures *textures, void *mlx_ptr);
-void put_textures(t_textures *textures, t_map *map, void *mlx_ptr, void *win_ptr);
+void load_textures(t_game *game);
+void put_textures(t_game *game);
+
 //! utils
 int ft_strcmp(char *s1, char *s2);
 void	ft_exit_error(char* message);

@@ -1,23 +1,22 @@
 // find_player_x.c
-#include "header_solong/maps.h"
-#include "header_solong/fonction.h"
+#include "header_solong/game.h"
 
 // Fonction pour trouver la position x du joueur 'P' sur la carte
-int find_player_x(t_map *map)
+int find_player_x(t_game *game)
 {
     int y;
     int x;
 
-    if (!map || !map->map)
+    if (!game->map || !game->map->map)
         ft_exit_error("Error\nMap data is invalid");
 
     y = 0;
-    while (y < map->height)
+    while (y < game->map->height)
     {
         x = 0;
-        while (x < map->width)
+        while (x < game->map->width)
         {
-            if (map->map[y][x] == 'P')
+            if (game->map->map[y][x] == 'P')
             {
                 return x;
             }
@@ -30,21 +29,21 @@ int find_player_x(t_map *map)
 }
 
 // Fonction pour trouver la position y du joueur 'P' sur la carte
-int find_player_y(t_map *map)
+int find_player_y(t_game *game)
 {
     int y;
     int x;
 
-    if (!map || !map->map)
+    if (!game->map || !game->map->map)
         ft_exit_error("Error\nMap data is invalid");
 
     y = 0;
-    while (y < map->height)
+    while (y < game->map->height)
     {
         x = 0;
-        while (x < map->width)
+        while (x < game->map->width)
         {
-            if (map->map[y][x] == 'P')
+            if (game->map->map[y][x] == 'P')
             {
                 return y;
             }
