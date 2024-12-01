@@ -43,7 +43,12 @@ SRC =	utils \
 		find_player \
 		find_item \
 		find_exit \
-		load_textures
+		textures_setup \
+		window_setup \
+		window_close \
+		hooks_setup \
+		keymap_setup \
+		move_player
 
 SRCS = $(addsuffix .c, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))

@@ -1,5 +1,7 @@
-#ifndef MAP_H
-#define MAP_H
+#ifndef MAPS_H
+#define MAPS_H
+
+#include "game.h"
 
 typedef struct s_map {
 	char	*map_name;	// nom de la map pour pouvoir l'ovrir

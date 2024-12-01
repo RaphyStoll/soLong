@@ -1,5 +1,4 @@
 #include "header_solong/fonction.h"
-#include "header_solong/player.h"
 
 // int in_life_solong(t_player *player)
 // {

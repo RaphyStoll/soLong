@@ -1,4 +1,5 @@
 // find_player_x.c
+#include "header_solong/fonction.h"
 #include "header_solong/game.h"
 
 // Fonction pour trouver la position x du joueur 'P' sur la carte
