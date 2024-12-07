@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	game = NULL;
 	game = malloc(sizeof(t_game));
 	game = game_init(argv, game);
-	keymap_init(game);
+	setup_hooks(game);
 	mlx_loop(game->window->mlx_ptr);
 	mlx_destroy_display(game->window->mlx_ptr);
 	return (0);

@@ -71,7 +71,7 @@ int validate_last_column(t_map map);
 //! window setup
 t_window *window_init(t_game *game);
 t_window *window_setup(t_game *game);
-
+int redraw_window(void *param);
 
 //! window close
 int	close_window(void *param);
@@ -82,7 +82,6 @@ int handle_key(int keycode, t_game *game);
 int find_keycode(t_game *game);
 
 //! keymap_setup
-t_keymap *keymap_init(t_game *game);
 t_keymap *get_keymap(void);
 t_keymap *get_macos_keymap(void);
 t_keymap *get_linux_keymap(void);

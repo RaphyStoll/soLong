@@ -2,7 +2,7 @@
 
 NAME = so_long
 GCC = gcc
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
 MKDIR = mkdir -p
 RM = rm -f
 OBJDIR = objects

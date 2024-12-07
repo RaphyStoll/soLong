@@ -32,3 +32,12 @@ t_window	*window_setup(t_game *game)
 		ft_exit_error("Error\nmlx_new_window failed");
 	return (game->window);
 }
+
+int redraw_window(void *param)
+{
+    t_game *game;
+
+    game = (t_game *)param;
+    put_textures(game);
+    return (0);
+}
