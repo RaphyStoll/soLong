@@ -2,7 +2,7 @@
 #include "mlx/mlx.h"
 
 #define TILE_SIZE 32 // Taille de chaque case (en pixels)
-//! t_textures *textures, t_map *map, void *mlx_ptr, void *win_ptr
+
 void put_textures(t_game *game)
 {
     int x;

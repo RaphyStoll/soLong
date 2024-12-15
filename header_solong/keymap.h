@@ -5,7 +5,7 @@ typedef struct s_game t_game;
 
 typedef struct s_keymap {
     int keycode; // code de la touche
-    int (*action)(void *param); // fonction a executer
+    int (*action)(t_game *game); // fonction a executer
 } t_keymap;
 
 #endif

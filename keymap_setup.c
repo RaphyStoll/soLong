@@ -19,7 +19,7 @@ t_keymap *get_macos_keymap(void)
 {
 	ft_printf("==get_macos_keymap==\n");
 	static t_keymap macos_keymap[] = {
-	 {65307, close_window},       // ESC - Quitter le jeu
+	{65307, close_window},       // ESC - Quitter le jeu
     {119, move_player_up},       // W - Déplacer le joueur vers le haut
     {115, move_player_down},     // S - Déplacer le joueur vers le bas
     {97, move_player_left},      // A - Déplacer le joueur vers la gauche

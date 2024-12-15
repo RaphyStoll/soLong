@@ -74,7 +74,7 @@ t_window *window_setup(t_game *game);
 int redraw_window(void *param);
 
 //! window close
-int	close_window(void *param);
+int	close_window(t_game *game);
 
 //! hooks setup
 void setup_hooks(t_game *game);
@@ -87,12 +87,25 @@ t_keymap *get_macos_keymap(void);
 t_keymap *get_linux_keymap(void);
 
 //! move player
-int	move_player_up(void *param);
-int	move_player_down(void *param);
-int	move_player_left(void *param);
-int	move_player_right(void *param);
+int	move_player_up(t_game *game);
+int	move_player_down(t_game *game);
+int	move_player_left(t_game *game);
+int	move_player_right(t_game *game);
 
+//! move utils
+int		is_void_case(char **map, int x, int y);
+int		is_collectible(char **map, int x, int y);
+int		is_exit_close(char **map, int x, int y);
+int		is_exit_open(char **map, int exit_open, int x, int y);
+int		is_wall(char **map, int x, int y);
 
+void	moved_in_a_void_case(t_game *game, int target_x, int target_y);
+void	moved_in_a_closed_exit(t_game *game, int target_x, int target_y);
+void	moved_in_an_open_exit(t_game *game, int target_x, int target_y);
+void	moved_in_a_wall(t_game *game);
+void	moved_in_a_collectible(t_game *game, int target_x, int target_y);
+
+void	move_is_possible(t_game *game, int target_x, int target_y);
 // utilitaire global
 //! utils
 int ft_strcmp(char *s1, char *s2);

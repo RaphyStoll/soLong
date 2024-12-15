@@ -21,3 +21,10 @@ void free_map(t_map *map)
         free(map->map_name);
     free(map);
 }
+
+int isWall(t_map *map, int x, int y)
+{
+	if(map->map[x][y] == 1)
+		return 1;
+	return 0;
+}
