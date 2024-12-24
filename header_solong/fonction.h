@@ -8,6 +8,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdbool.h>
 
 //! main
 int main(int argc, char **argv);
@@ -30,7 +31,11 @@ int	count_width(char *map_name);
 int	count_item(t_map *map);
 int	count_exit(t_map *map);
 int	count_player(t_map *map);
-void free_map(t_map *map);
+
+//!free_utils
+void free_all(t_game *game);
+void free_map(t_game *game);
+void free_textures(t_game *game);
 
 //! find_player
 int find_player_x(t_game *game);
@@ -86,6 +91,9 @@ t_keymap *get_keymap(void);
 t_keymap *get_macos_keymap(void);
 t_keymap *get_linux_keymap(void);
 
+//! open_exit
+int exit_is_open(t_game *game);
+
 //! move player
 int	move_player_up(t_game *game);
 int	move_player_down(t_game *game);
@@ -96,7 +104,7 @@ int	move_player_right(t_game *game);
 int		is_void_case(char **map, int x, int y);
 int		is_collectible(char **map, int x, int y);
 int		is_exit_close(char **map, int x, int y);
-int		is_exit_open(char **map, int exit_open, int x, int y);
+int		is_exit_open(char **map, int x, int y);
 int		is_wall(char **map, int x, int y);
 
 void	moved_in_a_void_case(t_game *game, int target_x, int target_y);
@@ -111,8 +119,9 @@ void	move_is_possible(t_game *game, int target_x, int target_y);
 int ft_strcmp(char *s1, char *s2);
 void	ft_exit_error(char* message);
 int	ft_strlen(char *str);
-
-
 int print_keycode(int keycode, void *param);
+
+//! run win game
+void run_win_game(t_game *game);
 
 #endif

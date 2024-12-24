@@ -23,12 +23,13 @@ void	moved_in_a_closed_exit(t_game *game, int target_x, int target_y)
 
 void	moved_in_an_open_exit(t_game *game, int target_x, int target_y)
 {
+	ft_printf("\033[1;32mPlayer is on an open exit\033[0m\n");
 	game->map->moves++;
 	game->map->map[game->map->player_y][game->map->player_x] = '0';
 	game->map->player_y = target_y;
 	game->map->player_x = target_x;
 	game->map->map[target_y][target_x] = 'P';
-	ft_printf("\033[1;32mYou win\033[0m\n");
+	run_win_game(game);
 	return ;
 }
 
@@ -48,10 +49,24 @@ void moved_in_a_collectible(t_game *game, int target_x, int target_y)
 	game->map->player_y = target_y;
 	game->map->player_x = target_x;
 	game->map->map[target_y][target_x] = 'P';
-	if(game->map->collected == game->map->items)
+	if(exit_is_open(game))
 	{
 		ft_printf("\033[36mPlayer collected all items\033[0m\n");
 		game->map->exit_isopen = 1;
+		
+	int y = 0;
+	int x = 0;
+	while(x < game->map->height)
+	{
+		y = 0;
+		while(y < game->map->width)
+		{
+			ft_printf("%c", game->map->map[x][y]); //$
+			y++;
+		}
+		ft_printf("\n"); //$
+		x++;
+	}
 	}
 	return ;
 }

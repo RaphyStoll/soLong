@@ -53,7 +53,7 @@ t_textures *textures_setup(t_game *game)
     game->textures->wall = mlx_xpm_file_to_image(game->window->mlx_ptr, "textures/test1/wall.xpm", &game->textures->width, &game->textures->height);
     game->textures->collectible = mlx_xpm_file_to_image(game->window->mlx_ptr, "textures/test1/collectable.xpm", &game->textures->width, &game->textures->height);
     game->textures->player = mlx_xpm_file_to_image(game->window->mlx_ptr, "textures/test1/ship_left.xpm", &game->textures->width, &game->textures->height);
-    game->textures->exit_closed = mlx_xpm_file_to_image(game->window->mlx_ptr, "textures/test1/exit.xpm", &game->textures->width, &game->textures->height);
+    game->textures->exit_closed = mlx_xpm_file_to_image(game->window->mlx_ptr, "textures/test1/exit_closed.xpm", &game->textures->width, &game->textures->height);
     game->textures->exit_open = mlx_xpm_file_to_image(game->window->mlx_ptr, "textures/test1/exit.xpm", &game->textures->width, &game->textures->height);
     if (!game->textures->floor || !game->textures->wall || !game->textures->collectible ||
         !game->textures->player || !game->textures->exit_closed || !game->textures->exit_open)

@@ -2,7 +2,7 @@
 
 NAME = so_long
 GCC = gcc
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -g -Wall -fsanitize=address -Wextra -Werror
 MKDIR = mkdir -p
 RM = rm -f
 OBJDIR = objects
@@ -51,7 +51,10 @@ SRC =	utils \
 		move_player \
 		move_utils \
 		move_utils2 \
-		Were_you_move
+		Were_you_move \
+		open_exit \
+		next_game \
+		free_utils
 
 SRCS = $(addsuffix .c, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))

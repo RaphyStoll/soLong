@@ -21,9 +21,9 @@ int is_exit_close(char **map, int x, int y)
     return (0);
 }
 
-int is_exit_open(char **map, int exit_open, int x, int y)
+int is_exit_open(char **map, int x, int y)
 {
-    if (map[y][x] == 'E' && exit_open == 1)
+    if (map[y][x] == 'E')
         return (1);
     return (0);
 }

@@ -10,6 +10,7 @@ typedef struct s_map {
 	int		width;     // largeur de la map
 	int		collected;  // conte les items collecter par le joueur
 	int		moves;		// nombre de mouvements
+	int		objectif_moves;  //Nombre de pas minimum proposer par le BTS (sert de record a battre)
 	int		items;		// nombre d'items
 	int		player;		// nombre de joueurs (toujours 1)
 	int		player_x;	// position x du joueur
