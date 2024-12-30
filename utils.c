@@ -1,12 +1,5 @@
 #include "header_solong/fonction.h"
 
-// int in_life_solong(t_player *player)
-// {
-// 	if (player->health > 0)
-// 		return (1);
-// 	return (0);
-// }
-
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;

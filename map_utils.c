@@ -16,7 +16,7 @@ int	count_lines(char *map_name)
 		lines_count++;
 	}
 	close(fd);
-	return lines_count;
+	return (lines_count);
 }
 
 // Compte la largeur de la carte en lisant la première ligne du fichier

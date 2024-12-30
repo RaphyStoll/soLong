@@ -2,10 +2,11 @@
 
 NAME = so_long
 GCC = gcc
-FLAGS = -g -Wall -fsanitize=address -Wextra -Werror
+FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
 MKDIR = mkdir -p
 RM = rm -f
 OBJDIR = objects
+BONUSDIR = /bonus
 
 #! permet de switch entre linux et mac
 ifeq ($(shell uname), Linux)
@@ -38,7 +39,6 @@ SRC =	utils \
 		remove_new_line \
 		map_is_valid \
 		map_utils \
-		map_utils2 \
 		map_setup \
 		find_player \
 		find_item \
@@ -54,11 +54,42 @@ SRC =	utils \
 		Were_you_move \
 		open_exit \
 		next_game \
-		free_utils
+		free_utils \
+		bfs_algo \
+		bts_setup
+
+SRC_BONUS =	utils \
+		main \
+		open_map \
+		wall_validation \
+		wall_valid_utils \
+		remove_new_line \
+		map_is_valid \
+		map_utils \
+		map_setup \
+		find_player \
+		find_item \
+		find_exit \
+		textures_setup \
+		window_setup \
+		window_close \
+		hooks_setup \
+		keymap_setup \
+		move_player \
+		move_utils \
+		move_utils2 \
+		Were_you_move \
+		open_exit \
+		next_game \
+		free_utils \
+		bfs_algo \
+		bts_setup
 
 SRCS = $(addsuffix .c, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
+SRCS_BONUS = $(addprefix $(BONUSDIR)/, $(addsuffix .c, $(SRC_BONUS)))
+OBJS_BONUS = $(addprefix $(OBJDIR)/, $(SRCS_BONUS:.c=.o))
 
 ALL_LIBS = $(FT_PRINTF_LIB) $(GNL_LIB)
 

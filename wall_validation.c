@@ -1,5 +1,6 @@
 #include "header_solong/fonction.h"
 #include "header_solong/maps.h"
+#include "header_solong/macro.h"
 
 int	validate_wall(t_map *map)
 {
@@ -15,7 +16,7 @@ int	validate_wall(t_map *map)
 		ft_exit_error("Error\n1st column is not valid");
 	if (!validate_last_column(*map))
 		ft_exit_error("Error\nLast column is not valid");
-	return (1);
+	return (true);
 }
 
 int	validate_first_line(t_map map)
@@ -26,10 +27,10 @@ int	validate_first_line(t_map map)
 	while (x < map.width)
 	{
 		if (map.map[0][x] != '1')
-			return (0);
+			return (false);
 		x++;
 	}
-	return (1);
+	return (true);
 }
 
 int	validate_last_line(t_map map)
@@ -40,10 +41,10 @@ int	validate_last_line(t_map map)
 	while (x < map.width)
 	{
 		if (map.map[map.height - 1][x] != '1')
-			return (0);
+			return (false);
 		x++;
 	}
-	return (1);
+	return (true);
 }
 
 int	validate_first_column(t_map map)
@@ -54,10 +55,10 @@ int	validate_first_column(t_map map)
 	while (y < map.height)
 	{
 		if (map.map[y][0] != '1')
-			return (0);
+			return (false);
 		y++;
 	}
-	return (1);
+	return (true);
 }
 
 int	validate_last_column(t_map map)
@@ -68,8 +69,8 @@ int	validate_last_column(t_map map)
 	while (y < map.height)
 	{
 		if (map.map[y][map.width - 1] != '1')
-			return (0);
+			return (false);
 		y++;
 	}
-	return (1);
+	return (true);
 }

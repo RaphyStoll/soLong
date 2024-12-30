@@ -1,5 +1,6 @@
 #include "header_solong/fonction.h"
 #include "header_solong/maps.h"
+#include "header_solong/macro.h"
 
 int	validate_rectangle(t_map map)
 {
@@ -10,10 +11,10 @@ int	validate_rectangle(t_map map)
     while (y < map.height)
     {
         if ((int)ft_strlen(map.map[y]) != map.width)
-            return (0);
+            return (false);
         y++;
     }
 
 	//$ ft_printf("====end===="); //$
-    return (1);
+    return (true);
 }

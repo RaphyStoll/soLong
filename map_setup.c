@@ -29,6 +29,8 @@ t_map	*map_setup(t_game *game, char *av)
 	game->map->player = count_player(game->map);
 	game->map->player_x = find_player_x(game);
 	game->map->player_y = find_player_y(game);
+	game->map->old_player_x = game->map->player_x;
+	game->map->old_player_y = game->map->player_y;
 	game->map->exit_x = find_exit_x(game);
 	game->map->exit_y = find_exit_y(game);
 

@@ -10,7 +10,7 @@ int open_new_map(char *map_name)
 	//$ ft_printf("fd = %d\n", fd);
 	if (fd < 0)
 		ft_exit_error("Error\nFailed to open map file");
-	return fd;
+	return (fd);
 }
 
 // Lire les lignes d'un fichier et les stocker dans un tableau
@@ -30,7 +30,7 @@ char **read_map(int fd)
 		map[i++] = line;
 	}
 	map[i] = NULL;
-	return map;
+	return (map);
 }
 
 // Ouvrir un fichier, lire les lignes et les stocker dans un tableau

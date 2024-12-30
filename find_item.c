@@ -1,6 +1,7 @@
 // find_player_x.c
 #include "header_solong/fonction.h"
 #include "header_solong/game.h"
+#include "header_solong/macro.h"
 
 // Fonction pour trouver la position x du joueur 'P' sur la carte
 int find_item_x(t_game *game)
@@ -19,14 +20,14 @@ int find_item_x(t_game *game)
         {
             if (game->map->map[y][x] == 'C')
             {
-                return x;
+                return (x);
             }
             x++;
         }
         y++;
     }
     ft_exit_error("Error\nItem 'C' not found on the map");
-    return -1; // Valeur de retour par défaut (ne devrait jamais être atteinte)
+    return (default); // Valeur de retour par défaut (ne devrait jamais être atteinte)
 }
 
 // Fonction pour trouver la position y du joueur 'P' sur la carte
@@ -46,12 +47,12 @@ int find_item_y(t_game *game)
         {
             if (game->map->map[y][x] == 'P')
             {
-                return y;
+                return (y);
             }
             x++;
         }
         y++;
     }
     ft_exit_error("Error\nItem 'C' not found on the map");
-    return -1; // Valeur de retour par défaut (ne devrait jamais être atteinte)
+    return (default); // Valeur de retour par défaut (ne devrait jamais être atteinte)
 }

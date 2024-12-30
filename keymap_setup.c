@@ -48,5 +48,5 @@ t_keymap *get_linux_keymap(void)
         {65363, move_player_right},// Flèche droite - Déplacer le joueur vers la droite
         {0, NULL}                 // Fin du tableau
     };
-    return linux_keymap;
+    return (linux_keymap);
 }

@@ -1,8 +1,6 @@
 #include "header_solong/game.h"
 #include "mlx/mlx.h"
 
-#define TILE_SIZE 32 // Taille de chaque case (en pixels)
-
 void put_textures(t_game *game)
 {
     int x;

@@ -1,9 +1,7 @@
 #include "header_solong/fonction.h"
 #include "header_solong/game.h"
+#include "header_solong/macro.h"
 #include "mlx/mlx.h"
-
-#define TILE_SIZE 32 // Taille de chaque case (en pixels)
-//! t_textures *textures, t_map *map, void *mlx_ptr, void *win_ptr
 
 t_textures	*textures_init(t_game *game)
 {
@@ -61,4 +59,33 @@ t_textures *textures_setup(t_game *game)
         ft_exit_error("Error\nFailed to load one or more textures\n");
     }
 	return (game->textures);
+}
+void redraw(t_game *game, int target_x, int target_y)
+{
+	// (void)target_x;
+	// (void)target_y;
+	// put_textures(game);
+	
+	t_map		*map;
+	t_window	*win;
+	t_textures	*textures;
+	char		old_cell;
+	char		new_cell;
+
+	map = game->map;
+	win = game->window;
+	textures = game->textures;
+	old_cell = map->map[map->old_player_y][map->old_player_x];
+	new_cell = map->map[map->player_y][map->player_x];
+    ft_printf("old_cell = %c\nnew_cell = %c\n",old_cell,new_cell);
+	ft_printf("player x y = %d %d\nold_player x y = %d %d\n", map->player_x, map->player_y, map->old_player_x, map->old_player_y);
+	if (old_cell == '0')
+        mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->floor, map->old_player_x * TILE_SIZE, map->old_player_y * TILE_SIZE);
+    else if (old_cell == 'C')
+        mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->collectible, map->old_player_x * TILE_SIZE, map->old_player_y * TILE_SIZE);
+    else if (old_cell == 'E')
+        mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->exit_closed, map->old_player_x * TILE_SIZE, map->old_player_y * TILE_SIZE);
+	if (new_cell == '1')
+    	return ;
+	mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->player, target_x * TILE_SIZE, target_y * TILE_SIZE);
 }

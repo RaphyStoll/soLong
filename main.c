@@ -17,19 +17,15 @@ void arg_verif(int argc)
 
 t_game	*game_init(char **argv, t_game *game)
 {
-	//$ ft_printf("==game init==\n");
 	game = NULL;
 	game = malloc(sizeof(t_game));
 	if(!game)
 		ft_exit_error("Error\nt_game malloc failed");
-	//$ ft_printf("game malloc\n");
 	game->map = map_init(game, argv[1]);
-	//$ ft_printf("map init\n");
 	game->window = window_init(game);
-	//$ ft_printf("window init\n");
 	game->textures = textures_init(game);
-	//$ ft_printf("textures init\n");
-	//$ ft_printf("==game init ok==\n");
+	game->keymap = get_keymap();
+	game->bfs = bfs_init(game);
 	return (game);
 }
 
@@ -40,8 +36,8 @@ int	main(int argc, char **argv)
 
 	arg_verif(argc);
 	game = NULL;
-	game = malloc(sizeof(t_game));
 	game = game_init(argv, game);
+	run_bfs(game);
 	setup_hooks(game);
 	mlx_loop(game->window->mlx_ptr);
 	mlx_destroy_display(game->window->mlx_ptr);
