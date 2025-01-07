@@ -19,13 +19,15 @@ t_game	*game_init(char **argv, t_game *game)
 {
 	game = NULL;
 	game = malloc(sizeof(t_game));
-	if(!game)
-		ft_exit_error("Error\nt_game malloc failed");
 	game->map = map_init(game, argv[1]);
+	game->monster = monster_init(game);
 	game->window = window_init(game);
 	game->textures = textures_init(game);
 	game->keymap = get_keymap();
 	game->bfs = bfs_init(game);
+	if (!game || !game->map || !game->monster || !game->window ||
+	!game->textures || !game->keymap || !game->bfs)
+		ft_exit_error("Error\nt_game malloc failed");
 	return (game);
 }
 

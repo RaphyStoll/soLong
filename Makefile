@@ -121,7 +121,10 @@ BONUS_SRC = \
     wall_validation_bonus \
     Were_you_move_bonus \
     window_close_bonus \
-    window_setup_bonus
+    window_setup_bonus \
+	monster_setup_bonus \
+	find_monster_bonus \
+	put_textures
 
 # 1) monster => monster.c, 2) => source/bonus/monster.c
 BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))

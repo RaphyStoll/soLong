@@ -137,4 +137,14 @@ int			print_keycode(int keycode, void *param);
 //! run win game
 void		run_win_game(t_game *game);
 
+//! monster
+t_monster	*monster_init(t_game *game);
+t_monster	*monster_setup(t_game *game);
+t_monster	*load_monsters(t_game *game);
+t_monster	*monster_add(t_game *game, int x, int y);
+
+//! find_monster
+int find_monster_x(t_game *game);
+int find_monster_y(t_game *game);
+
 #endif

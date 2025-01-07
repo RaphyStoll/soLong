@@ -1,0 +1,17 @@
+/* XPM */
+static char *blinky_xpm[] = {
+"8 8 3 1",
+/* 8x8, 3 couleurs, 1 caractère par pixel */
+"  c None",     /* espace = transparent */
+"B c #FF0000",  /* B = rouge (Blinky's body) */
+"E c #000000",  /* E = noir (yeux, etc.) */
+/* lignes de pixel */
+"   BB   ",
+"  BBBB  ",
+" BBBBBB ",
+" BBBBBB ",
+" BBBBBB ",
+" BEEEBB ",
+" BEEEBB ",
+" BBBBBB "
+};

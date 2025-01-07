@@ -19,11 +19,11 @@ void put_textures(t_game *game)
     int x;
 	int y;
 
-    y = 0;
-    while (y < game->map->height)
+    y = -1;
+    while (y++ < game->map->height)
     {
-        x = 0;
-        while (x < game->map->width)
+        x = -1;
+        while (x++ < game->map->width)
         {
             mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->floor, x * game->window->title_size, y * game->window->title_size);
             if (game->map->map[y][x] == '1')
@@ -36,9 +36,9 @@ void put_textures(t_game *game)
                 mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->exit_closed, x * game->window->title_size, y * game->window->title_size);
             else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 1)
                 mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->exit_open, x * game->window->title_size, y * game->window->title_size);
-            x++;
-        }
-        y++;
+			else if (game->map->map[y][x] == 'M')
+			put_monster_texture(game, x, y);
+		}
     }
 }
 
@@ -92,22 +92,4 @@ void redraw(t_game *game, int target_x, int target_y, char a)
 	if (new_cell == '1')
     	return ;
 	put_player_texture(game, target_x, target_y, a);
-}
-
-
-void put_player_texture(t_game *game, int target_x, int target_y, char a)
-{
-	t_window	*win;
-	t_textures	*textures;
-
-	win = game->window;
-	textures = game->textures;
-	if (a == 'U')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->player_up, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (a == 'D')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->player_down, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (a == 'L')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->player_left, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (a == 'R')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->player_right, target_x * TILE_SIZE, target_y * TILE_SIZE);
 }

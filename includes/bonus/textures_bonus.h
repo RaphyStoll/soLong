@@ -13,6 +13,10 @@ typedef struct s_textures {
 	void *collectible; //! C
 	void *exit_open; //! E
 	void *exit_closed; //! E
+	void *monster_blue; //! M
+	void *monster_red; //! M
+	void *monster_green; //! M
+	void *monster_yellow; //! M
 	int width;
 	int height;
 

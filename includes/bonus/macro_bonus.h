@@ -6,5 +6,10 @@
 # define false 0
 # define default -1
 # define TILE_SIZE 32
+# define stay 0
+# define up 1
+# define right 2
+# define down 3
+# define left 4
 
 #endif

@@ -1,0 +1,15 @@
+/* XPM */
+static char *inky_xpm[] = {
+"8 8 3 1",
+"  c None",
+"I c #00FFFF",  /* I = cyan (Inky) */
+"E c #000000",
+"   II   ",
+"  IIII  ",
+" IIIIII ",
+" IIIIII ",
+" IIIIII ",
+" IEEIII ",
+" IEEIII ",
+" IIIIII "
+};

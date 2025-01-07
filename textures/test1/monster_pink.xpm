@@ -1,0 +1,15 @@
+/* XPM */
+static char *pinky_xpm[] = {
+"8 8 3 1",
+"  c None",
+"P c #FFB8FF",  /* P = rose (Pinky) */
+"E c #000000",
+"   PP   ",
+"  PPPP  ",
+" PPPPPP ",
+" PPPPPP ",
+" PPPPPP ",
+" PEEPPP ",
+" PEEPPP ",
+" PPPPPP "
+};

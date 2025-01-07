@@ -4,21 +4,49 @@
 
 t_monster	*monster_init(t_game *game)
 {
+	ft_printf("monster_init\n");
 	game->monster = malloc(sizeof(t_monster));
 	if (!game->monster)
 		ft_exit_error("Error\nt_monster malloc failed");
-	game->monster = monster_setup(game);
-	monster_setup(game);
+	game->monster = load_monsters(game);
+	ft_printf("monster_init end\n");
 	return (game->monster);
 }
 
-t_monster	*monster_setup(t_game *game)
+t_monster *load_monsters(t_game *game)
 {
-	game->monster->id = 1;
-	game->monster->monster_x = find_monster_x(game);
-	game->monster->monster_y = find_monster_y(game);
-	game->monster->old_monster_x = game->monster->monster_x;
-	game->monster->old_monster_y = game->monster->monster_y;
-	game->monster->dir = 0;
-	game->monster->next = NULL;
+    int y = 0;
+    while (y < game->map->height)
+    {
+        int x = 0;
+        while (x < game->map->width)
+        {
+            if (game->map->map[y][x] == 'M')
+                monster_add(game, x, y);
+            x++;
+        }
+        y++;
+    }
+	return (game->monster);
+}
+
+t_monster *monster_add(t_game *game, int x, int y)
+{
+    t_monster *new_m;
+	static int id;
+    new_m = malloc(sizeof(t_monster));
+    if (!new_m)
+        ft_exit_error("Error\nmonster malloc failed");
+
+    new_m->id = id++; 
+	ft_printf("monster id = %d\n", new_m->id);
+    new_m->monster_x = x;
+    new_m->monster_y = y;
+    new_m->old_monster_x = x;
+    new_m->old_monster_y = y;
+    new_m->dir = 0;
+    new_m->next = NULL;
+    new_m->next = game->monster;
+    game->monster = new_m;
+	return (game->monster);
 }

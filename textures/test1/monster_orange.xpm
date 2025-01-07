@@ -1,0 +1,15 @@
+/* XPM */
+static char *clyde_xpm[] = {
+"8 8 3 1",
+"  c None",
+"C c #FF9900",  /* C = orange (Clyde) */
+"E c #000000",
+"   CC   ",
+"  CCCC  ",
+" CCCCCC ",
+" CCCCCC ",
+" CCCCCC ",
+" CEEECC ",
+" CEEECC ",
+" CCCCCC "
+};
