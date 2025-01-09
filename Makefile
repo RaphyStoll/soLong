@@ -1,10 +1,11 @@
+#-fsanitize=address
 # Nom de l'exécutable principal et bonus (placés dans output/)
 NAME        = output/so_long
 NAME_BONUS  = output/so_long_bonus
 
 # Compilateur et flags
 CC          = gcc
-CFLAGS      = -g -fsanitize=address -Wall -Wextra -Werror
+CFLAGS      = -g -Wall -Wextra -Werror
 
 # Commandes pratiques
 MKDIR       = mkdir -p
@@ -124,7 +125,8 @@ BONUS_SRC = \
     window_setup_bonus \
 	monster_setup_bonus \
 	find_monster_bonus \
-	put_textures
+	put_textures \
+	rand_bonus
 
 # 1) monster => monster.c, 2) => source/bonus/monster.c
 BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))

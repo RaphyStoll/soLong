@@ -34,7 +34,7 @@ t_map	*map_setup(t_game *game, char *av)
 	game->map->exit_x = find_exit_x(game);
 	game->map->exit_y = find_exit_y(game);
 
-	/* //$
+	 //$
 	int y = 0;
 	int x = 0;
 	ft_printf("map_name: %s\n", game->map->map_name); //$
@@ -61,6 +61,6 @@ t_map	*map_setup(t_game *game, char *av)
 	ft_printf("exit_x: %d\n", game->map->exit_x); //$
 	ft_printf("exit_y: %d\n", game->map->exit_y); //$
 	ft_printf("exit_isopen: %d\n", game->map->exit_isopen); //$
-	*/
+	
 	return (game->map);
 }

@@ -4,6 +4,7 @@
 # include "game_bonus.h"
 # include "bfs_bonus.h"
 # include "keymap_bonus.h"
+# include "monster_bonus.h"
 # include "../../gnl/get_next_line.h"
 # include "../../ft_printf/ft_printf.h"
 # include <stdlib.h>
@@ -73,8 +74,9 @@ t_textures	*textures_setup(t_game *game);
 void		put_textures(t_game *game);
 t_textures	*textures_init(t_game *game);
 void		redraw(t_game *game, int target_x, int target_y, char a);
-void put_player_texture(t_game *game, int target_x, int target_y, char a);
 
+//! put_textures
+void put_player_texture(t_game *game, int target_x, int target_y, char a);
 
 //! wall_validation
 int			validate_wall(t_map *map);
@@ -146,5 +148,8 @@ t_monster	*monster_add(t_game *game, int x, int y);
 //! find_monster
 int find_monster_x(t_game *game);
 int find_monster_y(t_game *game);
+
+//! rand
+int pseudo_random(int seed)
 
 #endif
