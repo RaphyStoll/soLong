@@ -20,7 +20,6 @@ char	**read_map(int fd)
 	char	*line;
 	int		i;
 
-	//$ ft_printf("fd read = %d\n", fd);
 	i = 0;
 	map = malloc(sizeof(char *) * 1000);
 	if (!map)
@@ -40,18 +39,11 @@ char	**open_and_read_map(char *map_name)
 	int		lines_count;
 	int		fd;
 
-	// Compter les lignes pour allouer `map`
 	lines_count = count_lines(map_name);
-	// Rouvrir le fichier pour lire les lignes
 	fd = open_new_map(map_name);
-	//$ ft_printf("fd = %d\n", fd);
-	//$ ft_printf("fd open and read = %d\n", fd);
-	// Allouer de l'espace pour la carte
 	map = malloc(sizeof(char *) * (lines_count + 1));
 	if (!map)
 		ft_exit_error("Error\nFailed to allocate memory for map");
-	// ne sera a rien mais si je supprime le malloc j'ai un bug sur la verif de map
-	// donc solution simple free avant l'use
 	free(map);
 	map = read_map(fd);
 	close(fd);

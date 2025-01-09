@@ -41,20 +41,17 @@ int	count_width(char *map_name)
 	return (width - 1);
 }
 
-//compte le nombre d'item total a collecter
+// compte le nombre d'item total a collecter
 int	count_item(t_map *map)
 {
-	//$ ft_printf("\n======count_item====\n");
 	int	y;
 	int	x;
 	int	count;
 
 	count = 0;
 	y = 0;
-	//$ ft_printf("test\n");
 	while (map->map[y])
 	{
-		//$ ft_printf("test1\n");
 		x = 0;
 		while (map->map[y][x])
 		{
@@ -64,26 +61,19 @@ int	count_item(t_map *map)
 		}
 		y++;
 	}
-	// $ft_printf("count = %d\n", count);
-	//$ ft_printf("test3\n");
-	//$	ft_printf("==========\n\n")<<<<<<;
 	return (count);
-	
 }
 
 int	count_exit(t_map *map)
 {
-	//$ ft_printf("\n======count_item====\n");
 	int	y;
 	int	x;
 	int	count;
 
 	count = 0;
 	y = 0;
-	//$ ft_printf("test\n");
 	while (map->map[y])
 	{
-		//$ ft_printf("test1\n");
 		x = 0;
 		while (map->map[y][x])
 		{
@@ -93,26 +83,19 @@ int	count_exit(t_map *map)
 		}
 		y++;
 	}
-	// $ft_printf("count = %d\n", count);
-	//$ ft_printf("test3\n");
-	//$	ft_printf("==========\n\n");
 	return (count);
-	
 }
 
 int	count_player(t_map *map)
 {
-	//$ ft_printf("\n======count_item====\n");
-	int	y;
-	int	x;
-	int	count;
+	int y;
+	int x;
+	int count;
 
 	count = 0;
 	y = 0;
-	//$ ft_printf("test\n");
 	while (map->map[y])
 	{
-		//$ ft_printf("test1\n");
 		x = 0;
 		while (map->map[y][x])
 		{
@@ -122,9 +105,5 @@ int	count_player(t_map *map)
 		}
 		y++;
 	}
-	// $ft_printf("count = %d\n", count);
-	//$ ft_printf("test3\n");
-	//$	ft_printf("==========\n\n");
 	return (count);
-	
 }

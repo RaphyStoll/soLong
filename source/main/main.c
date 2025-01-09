@@ -2,24 +2,24 @@
 #include "../includes/main/game.h"
 #include "../mlx/mlx.h"
 
-int print_keycode(int keycode, void *param)
+int	print_keycode(int keycode, void *param)
 {
-    (void)param; // Si vous n'utilisez pas de paramètres
-    ft_printf("Key pressed: %d\n", keycode);
-    return (0);
+	(void)param;
+	ft_printf("Key pressed: %d\n", keycode);
+	return (0);
 }
 
-void arg_verif(int argc)
+void	arg_verif(int argc)
 {
 	if (argc != 2)
-	ft_exit_error("Error\nInvalid number of arguments");
+		ft_exit_error("Error\nInvalid number of arguments");
 }
 
 t_game	*game_init(char **argv, t_game *game)
 {
 	game = NULL;
 	game = malloc(sizeof(t_game));
-	if(!game)
+	if (!game)
 		ft_exit_error("Error\nt_game malloc failed");
 	game->map = map_init(game, argv[1]);
 	game->window = window_init(game);
@@ -29,7 +29,7 @@ t_game	*game_init(char **argv, t_game *game)
 	return (game);
 }
 
-//unsigned long long int = 18446744073709551615 max value
+// unsigned long long int = 18446744073709551615 max value
 int	main(int argc, char **argv)
 {
 	t_game	*game;

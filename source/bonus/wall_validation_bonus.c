@@ -1,6 +1,6 @@
 #include "../includes/bonus/fonction_bonus.h"
-#include "../includes/bonus/maps_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
+#include "../includes/bonus/maps_bonus.h"
 
 int	validate_wall(t_map *map)
 {

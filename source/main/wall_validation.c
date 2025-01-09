@@ -1,6 +1,6 @@
 #include "../includes/main/fonction.h"
-#include "../includes/main/maps.h"
 #include "../includes/main/macro.h"
+#include "../includes/main/maps.h"
 
 int	validate_wall(t_map *map)
 {

@@ -1,52 +1,51 @@
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
 
-bool have_item(t_map *map)
+bool	have_item(t_map *map)
 {
-	if(map->items > 0)
+	if (map->items > 0)
 		return (true);
 	return (false);
 }
 
-bool have_exit(t_map *map)
+bool	have_exit(t_map *map)
 {
 	if (map->exit == 1)
 		return (true);
 	return (false);
 }
 
-bool have_player(t_map *map)
+bool	have_player(t_map *map)
 {
 	if (map->player == 1)
 		return (true);
 	return (false);
 }
 
-int have_other(t_map *map)
+int	have_other(t_map *map)
 {
-    int y;
-    int x;
+	int	y;
+	int	x;
 
-    if (!map || !map->map)
-        ft_exit_error("Error\nMap data is invalid");
-
-    y = 0;
-    while (y < map->height)
-    {
-        x = 0;
-        while (x < map->width)
-        {
-            if (map->map[y][x] != 'C' && map->map[y][x] != 'P' &&
-				map->map[y][x] != '0' && map->map[y][x] != '1' &&
-				map->map[y][x] != 'E' && map->map[y][x] != 'M')
-            {
-                return (false);
-            }
-            x++;
-        }
-        y++;
-    }
-    return (true);
+	if (!map || !map->map)
+		ft_exit_error("Error\nMap data is invalid");
+	y = 0;
+	while (y < map->height)
+	{
+		x = 0;
+		while (x < map->width)
+		{
+			if (map->map[y][x] != 'C' && map->map[y][x] != 'P'
+				&& map->map[y][x] != '0' && map->map[y][x] != '1'
+				&& map->map[y][x] != 'E' && map->map[y][x] != 'M')
+			{
+				return (false);
+			}
+			x++;
+		}
+		y++;
+	}
+	return (true);
 }
 
 void	valid_map(t_map *map)

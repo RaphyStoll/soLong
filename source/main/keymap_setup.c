@@ -1,52 +1,38 @@
-#include "../includes/main/keymap.h"
 #include "../includes/main/fonction.h"
 #include "../includes/main/game.h"
+#include "../includes/main/keymap.h"
 #include "../mlx/mlx.h"
 
-t_keymap *get_keymap(void)
+t_keymap	*get_keymap(void)
 {
-	#ifdef __APPLE__
+#ifdef __APPLE__
 	return (get_macos_keymap());
-	#elif __linux__
+#elif __linux__
 	return (get_linux_keymap());
-	#else
+#else
 	ft_exit_error("Error\nUnsupported OS");
 	return (NULL);
-	#endif
+#endif
 }
 
-t_keymap *get_macos_keymap(void)
+t_keymap	*get_macos_keymap(void)
 {
-	//$ft_printf("==get_macos_keymap==\n");
-	static t_keymap macos_keymap[] = {
-	{65307, close_window},       // ESC - Quitter le jeu
-    {119, move_player_up},       // W - Déplacer le joueur vers le haut
-    {115, move_player_down},     // S - Déplacer le joueur vers le bas
-    {97, move_player_left},      // A - Déplacer le joueur vers la gauche
-    {100, move_player_right},    // D - Déplacer le joueur vers la droite
-    {65362, move_player_up},     // Flèche haut - Déplacer le joueur vers le haut
-    {65364, move_player_down},   // Flèche bas - Déplacer le joueur vers le bas
-    {65361, move_player_left},   // Flèche gauche - Déplacer le joueur vers la gauche
-    {65363, move_player_right},  // Flèche droite - Déplacer le joueur vers la droite
-    {0, NULL}                    // Fin du tableau
-	};
+	static t_keymap	macos_keymap[] = {{65307, close_window}, {119,
+			move_player_up}, {115, move_player_down}, {97, move_player_left},
+			{100, move_player_right}, {65362, move_player_up}, {65364,
+			move_player_down}, {65361, move_player_left}, {65363,
+			move_player_right}, {0, NULL}};
+
 	return (macos_keymap);
 }
 
-t_keymap *get_linux_keymap(void)
+t_keymap	*get_linux_keymap(void)
 {
-	//$ft_printf("==get_linux_keymap==\n");
-    static t_keymap linux_keymap[] = {
-        {65307, close_window},    // ESC - Quitter le jeu
-        {119, move_player_up},    // W - Déplacer le joueur vers le haut
-        {115, move_player_down},  // S - Déplacer le joueur vers le bas
-        {97, move_player_left},   // A - Déplacer le joueur vers la gauche
-        {100, move_player_right}, // D - Déplacer le joueur vers la droite
-        {65362, move_player_up},  // Flèche haut - Déplacer le joueur vers le haut
-        {65364, move_player_down},// Flèche bas - Déplacer le joueur vers le bas
-        {65361, move_player_left},// Flèche gauche - Déplacer le joueur vers la gauche
-        {65363, move_player_right},// Flèche droite - Déplacer le joueur vers la droite
-        {0, NULL}                 // Fin du tableau
-    };
-    return (linux_keymap);
+	static t_keymap	linux_keymap[] = {{65307, close_window}, {119,
+			move_player_up}, {115, move_player_down}, {97, move_player_left},
+			{100, move_player_right}, {65362, move_player_up}, {65364,
+			move_player_down}, {65361, move_player_left}, {65363,
+			move_player_right}, {0, NULL}};
+
+	return (linux_keymap);
 }
