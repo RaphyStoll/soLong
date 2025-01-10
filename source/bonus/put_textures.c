@@ -34,19 +34,24 @@ void	put_monster_texture(t_game *game, int target_x, int target_y)
 	textures = game->textures;
 	win = game->window;
 	r = pseudo_random(seed++) % 4;
-	ft_printf("===put_monster_texture===\n"); //$
-	if (r == 0)
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
-			textures->monster_blue, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (r == 1)
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
-			textures->monster_red, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (r == 2)
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
-			textures->monster_green, target_x * TILE_SIZE, target_y
-			* TILE_SIZE);
-	else if (r == 3)
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
-			game->textures->monster_yellow, target_x * TILE_SIZE, target_y
-			* TILE_SIZE);
+	if (r == 0) {
+		ft_printf("===blue_s===\n"); //$
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_blue, target_x * TILE_SIZE, target_y * TILE_SIZE);
+			ft_printf("===blue===\n"); //$
+		}
+	else if (r == 1) {
+		ft_printf("===red_s===\n"); //$
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_red, target_x * TILE_SIZE, target_y * TILE_SIZE);
+					ft_printf("===red===\n"); //$
+	}
+	else if (r == 2) {
+		ft_printf("===green_s===\n"); //$
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_green, target_x * TILE_SIZE, target_y * TILE_SIZE);
+				ft_printf("===green===\n"); //$
+		}
+	else if (r == 3) {
+		ft_printf("===yellow_s===\n"); //$
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, game->textures->monster_yellow, target_x * TILE_SIZE, target_y * TILE_SIZE);
+					ft_printf("===zellow===\n"); //$
+		}
 }

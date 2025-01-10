@@ -64,30 +64,26 @@ t_textures	*textures_setup(t_game *game)
 
 	win = game->window;
 	textures = game->textures;
-	textures->floor = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/background.xpm", &textures->width,
-			&textures->height);
-	textures->wall = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/wall.xpm", &textures->width, &textures->height);
-	textures->collectible = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/collectable.xpm", &textures->width,
-			&textures->height);
-	textures->player_up = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/ship_up.xpm", &textures->width, &textures->height);
-	textures->player_down = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/ship_down.xpm", &textures->width,
-			&textures->height);
-	textures->player_left = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/ship_left.xpm", &textures->width,
-			&textures->height);
-	textures->player_right = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/ship_right.xpm", &textures->width,
-			&textures->height);
-	textures->exit_closed = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/exit_closed.xpm", &textures->width,
-			&textures->height);
-	textures->exit_open = mlx_xpm_file_to_image(win->mlx_ptr,
-			"textures/test1/exit.xpm", &textures->width, &textures->height);
+	textures->floor = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/background.xpm", &textures->width, &textures->height);
+	textures->wall = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/wall.xpm", &textures->width, &textures->height);
+	textures->collectible = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/collectable.xpm", &textures->width, &textures->height);
+	textures->player_up = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_up.xpm", &textures->width, &textures->height);
+	textures->player_down = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_down.xpm", &textures->width, &textures->height);
+	textures->player_left = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_left.xpm", &textures->width, &textures->height);
+	textures->player_right = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_right.xpm", &textures->width, &textures->height);
+	textures->monster_blue = mlx_xpm_file_to_image(win->mlx_ptr, "texxtures/test1/monster_blue.xpm", &textures->width, &textures->height);
+	textures->monster_red = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_red.xpm", &textures->width, &textures->height);
+	textures->monster_green = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_green.xpm", &textures->width, &textures->height);
+	textures->monster_yellow = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_yellow.xpm", &textures->width, &textures->height);
+	textures->exit_closed = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit_closed.xpm", &textures->width, &textures->height);
+	textures->exit_open = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit.xpm", &textures->width, &textures->height);
+	if (!textures->floor || !textures->wall || !textures->collectible
+		|| !textures->player_up || !textures->player_down
+		|| !textures->player_left || !textures->player_right
+		|| !textures->monster_blue || !textures->monster_red
+		|| !textures->monster_green || !textures->monster_yellow
+		|| !textures->exit_closed || !textures->exit_open)
+		ft_exit_error("Error\ntextures_setup failed");
 	return (game->textures);
 }
 

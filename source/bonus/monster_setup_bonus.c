@@ -4,12 +4,10 @@
 
 t_monster	*monster_init(t_game *game)
 {
-	ft_printf("==monster_init==\n"); //$
 	game->monster = malloc(sizeof(t_monster));
 	if (!game->monster)
 		ft_exit_error("Error\nt_monster malloc failed");
 	game->monster = load_monsters(game);
-	ft_printf("===monster_init end===\n"); //$
 	return (game->monster);
 }
 
@@ -25,7 +23,10 @@ t_monster	*load_monsters(t_game *game)
 		while (x < game->map->width)
 		{
 			if (game->map->map[y][x] == 'M')
+			{
 				monster_add(game, x, y);
+				put_monster_texture(game, x, y);
+		}
 			x++;
 		}
 		y++;
@@ -42,7 +43,6 @@ t_monster	*monster_add(t_game *game, int x, int y)
 		ft_exit_error("Error\nmonster malloc failed");
 
 	new_m->id = id++;
-	ft_printf("monster id = %d\n", new_m->id);
 	new_m->monster_x = x;
 	new_m->monster_y = y;
 	new_m->old_monster_x = x;
