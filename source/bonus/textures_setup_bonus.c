@@ -9,8 +9,11 @@ t_textures	*textures_init(t_game *game)
 	game->textures = malloc(sizeof(t_textures));
 	if (!game->textures)
 		ft_exit_error("Error\nt_textures malloc failed");
+	ft_printf("==textures_init==\n"); //$
 	game->textures = textures_setup(game);
+	ft_printf("==textures_setup ok==\n"); //$
 	put_textures(game);
+	ft_printf("==textures_put ok==\n"); //$
 	return (game->textures);
 }
 
@@ -19,11 +22,11 @@ void	put_textures(t_game *game)
 	int	x;
 	int	y;
 
-	y = -1;
-	while (y++ < game->map->height)
+	y = 0;
+	while (y < game->map->height)
 	{
-		x = -1;
-		while (x++ < game->map->width)
+		x = 0;
+		while (x < game->map->width)
 		{
 			mlx_put_image_to_window(game->window->mlx_ptr,
 				game->window->win_ptr, game->textures->floor, x
@@ -48,9 +51,9 @@ void	put_textures(t_game *game)
 				mlx_put_image_to_window(game->window->mlx_ptr,
 					game->window->win_ptr, game->textures->exit_open, x
 					* game->window->title_size, y * game->window->title_size);
-			else if (game->map->map[y][x] == 'M')
-				put_monster_texture(game, x, y);
+			x++;
 		}
+		y++;
 	}
 }
 

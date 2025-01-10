@@ -20,11 +20,19 @@ t_game	*game_init(char **argv, t_game *game)
 	game = NULL;
 	game = malloc(sizeof(t_game));
 	game->map = map_init(game, argv[1]);
+	ft_printf("==map_1_init_end==\n"); //$
 	game->monster = monster_init(game);
+	ft_printf("==monster_1_init_end==\n"); //$
 	game->window = window_init(game);
+	ft_printf("==win_1_init_end==\n"); //$
 	game->textures = textures_init(game);
+	ft_printf("==texture_1_init_end==\n"); //$
 	game->keymap = get_keymap();
+	ft_printf("==keymap_1_init_end==\n"); //$
 	game->bfs = bfs_init(game);
+	ft_printf("==bfs_1_init_end==\n"); //$
+
+	ft_printf("==game_init end==\n"); //$
 	if (!game || !game->map || !game->monster || !game->window
 		|| !game->textures || !game->keymap || !game->bfs)
 		ft_exit_error("Error\nt_game malloc failed");

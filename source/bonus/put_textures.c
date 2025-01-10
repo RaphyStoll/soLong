@@ -26,26 +26,26 @@ void	put_player_texture(t_game *game, int target_x, int target_y, char a)
 
 void	put_monster_texture(t_game *game, int target_x, int target_y)
 {
-	int rand;
+	int r;
 	static int seed;
 	t_textures *textures;
 	t_window *win;
 
 	textures = game->textures;
 	win = game->window;
-	rand = pseudo_random(seed++) % 4;
-
-	if (rand == 0)
+	r = pseudo_random(seed++) % 4;
+	ft_printf("===put_monster_texture===\n"); //$
+	if (r == 0)
 		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
 			textures->monster_blue, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (rand == 1)
+	else if (r == 1)
 		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
 			textures->monster_red, target_x * TILE_SIZE, target_y * TILE_SIZE);
-	else if (rand == 2)
+	else if (r == 2)
 		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
 			textures->monster_green, target_x * TILE_SIZE, target_y
 			* TILE_SIZE);
-	else if (rand == 3)
+	else if (r == 3)
 		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
 			game->textures->monster_yellow, target_x * TILE_SIZE, target_y
 			* TILE_SIZE);

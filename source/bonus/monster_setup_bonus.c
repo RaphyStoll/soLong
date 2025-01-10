@@ -4,12 +4,12 @@
 
 t_monster	*monster_init(t_game *game)
 {
-	ft_printf("monster_init\n");
+	ft_printf("==monster_init==\n"); //$
 	game->monster = malloc(sizeof(t_monster));
 	if (!game->monster)
 		ft_exit_error("Error\nt_monster malloc failed");
 	game->monster = load_monsters(game);
-	ft_printf("monster_init end\n");
+	ft_printf("===monster_init end===\n"); //$
 	return (game->monster);
 }
 

@@ -27,13 +27,13 @@ bool		have_player(t_map *map);
 bool		have_other(t_map *map);
 
 //!bfs
-void	run_bfs(t_game *game);
-void	visit_neighbor(t_game *game, int nx, int ny);
-void	check_current_cell(t_game *game, int x, int y);
-t_bfs	*bfs_init(t_game *game);
-t_bfs	*bfs_setup(t_game *game);
-int	*set_queue(t_game *game, char a);
-int **set_dist(t_game *game);
+void		run_bfs(t_game *game);
+void		visit_neighbor(t_game *game, int nx, int ny);
+void		check_current_cell(t_game *game, int x, int y);
+t_bfs		*bfs_init(t_game *game);
+t_bfs		*bfs_setup(t_game *game);
+int			*set_queue(t_game *game, char a);
+int 		**set_dist(t_game *game);
 
 //! map utils
 int			count_lines(char *map_name);
@@ -76,7 +76,8 @@ t_textures	*textures_init(t_game *game);
 void		redraw(t_game *game, int target_x, int target_y, char a);
 
 //! put_textures
-void put_player_texture(t_game *game, int target_x, int target_y, char a);
+void 		put_player_texture(t_game *game, int target_x, int target_y, char a);
+void		put_monster_texture(t_game *game, int target_x, int target_y);
 
 //! wall_validation
 int			validate_wall(t_map *map);
@@ -146,10 +147,10 @@ t_monster	*load_monsters(t_game *game);
 t_monster	*monster_add(t_game *game, int x, int y);
 
 //! find_monster
-int find_monster_x(t_game *game);
-int find_monster_y(t_game *game);
+int 		find_monster_x(t_game *game);
+int 		find_monster_y(t_game *game);
 
 //! rand
-int pseudo_random(int seed)
+int 		pseudo_random(int seed);
 
 #endif
