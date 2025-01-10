@@ -3,3 +3,6 @@
 so_long
 *.a
 *.o
+a.out.dSYM/*
+
+
