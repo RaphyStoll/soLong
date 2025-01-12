@@ -15,3 +15,16 @@ void	run_win_game(t_game *game)
 	mlx_destroy_window(mlx_ptr, win_ptr);
 	exit(0);
 }
+
+void	run_lose_game(t_game *game)
+{
+	void *mlx_ptr;
+	void *win_ptr;
+
+	win_ptr = game->window->win_ptr;
+	mlx_ptr = game->window->mlx_ptr;
+	ft_printf("\033[1;31mYou lose\033[0m\n");
+	free_all(game);
+	mlx_destroy_window(mlx_ptr, win_ptr);
+	exit(0);
+}

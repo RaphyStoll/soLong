@@ -125,8 +125,10 @@ BONUS_SRC = \
     window_setup_bonus \
 	monster_setup_bonus \
 	find_monster_bonus \
-	put_textures \
-	rand_bonus
+	put_textures_bonus \
+	rand_bonus \
+	move_utils3_bonus \
+	move_monster_bonus
 
 # 1) monster => monster.c, 2) => source/bonus/monster.c
 BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))

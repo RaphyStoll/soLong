@@ -15,5 +15,7 @@ void	move_is_possible(t_game *game, int target_x, int target_y, char a)
 		moved_in_a_collectible(game, target_x, target_y, a);
 	else if (is_void_case(game->map->map, target_x, target_y))
 		moved_in_a_void_case(game, target_x, target_y, a);
+	else if (is_monster(game->map->map, target_x, target_y))
+		moved_in_a_monster(game, a);
 	return ;
 }

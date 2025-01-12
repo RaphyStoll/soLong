@@ -1,6 +1,7 @@
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
+#include "../mlx/mlx.h"
 
 t_monster	*monster_init(t_game *game)
 {
@@ -24,9 +25,9 @@ t_monster	*load_monsters(t_game *game)
 		{
 			if (game->map->map[y][x] == 'M')
 			{
+				//put_monster_texture(game, x, y);
 				monster_add(game, x, y);
-				put_monster_texture(game, x, y);
-		}
+			}
 			x++;
 		}
 		y++;
@@ -43,6 +44,7 @@ t_monster	*monster_add(t_game *game, int x, int y)
 		ft_exit_error("Error\nmonster malloc failed");
 
 	new_m->id = id++;
+	ft_printf("===monster_id=%d===\n", new_m->id); //$
 	new_m->monster_x = x;
 	new_m->monster_y = y;
 	new_m->old_monster_x = x;

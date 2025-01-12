@@ -1,5 +1,6 @@
-#include "../includes/main/fonction.h"
-#include "../includes/main/game.h"
+#include "../includes/bonus/fonction_bonus.h"
+#include "../includes/bonus/game_bonus.h"
+#include "../includes/bonus/macro_bonus.h"
 #include "../mlx/mlx.h"
 
 void	run_win_game(t_game *game)

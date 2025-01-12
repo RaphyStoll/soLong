@@ -14,6 +14,7 @@ int	handle_key(int keycode, t_game *game)
 		if (game->keymap[i].keycode == keycode)
 		{
 			game->keymap[i].action(game);
+			monster_move(game);
 			return (false);
 		}
 		i++;

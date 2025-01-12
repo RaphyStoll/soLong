@@ -122,7 +122,9 @@ bool		is_collectible(char **map, int x, int y);
 bool		is_exit_close(char **map, int x, int y);
 bool		is_exit_open(char **map, int x, int y);
 bool		is_wall(char **map, int x, int y);
+bool		is_monster(char **map, int x, int y);
 
+void		moved_in_a_monster(t_game *game, char a);
 void		moved_in_a_void_case(t_game *game, int target_x, int target_y,char a);
 void		moved_in_a_closed_exit(t_game *game, int target_x, int target_y, char a);
 void		moved_in_an_open_exit(t_game *game, int target_x, int target_y, char a);
@@ -137,8 +139,9 @@ void		ft_exit_error(char* message);
 int			ft_strlen(char *str);
 int			print_keycode(int keycode, void *param);
 
-//! run win game
+//! run win/lose game
 void		run_win_game(t_game *game);
+void		run_lose_game(t_game *game);
 
 //! monster
 t_monster	*monster_init(t_game *game);
@@ -149,6 +152,10 @@ t_monster	*monster_add(t_game *game, int x, int y);
 //! find_monster
 int 		find_monster_x(t_game *game);
 int 		find_monster_y(t_game *game);
+
+//! monster move
+void		monster_move(t_game *game);
+int			is_walkable(t_game *game, int x, int y);
 
 //! rand
 int 		pseudo_random(int seed);

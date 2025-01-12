@@ -51,6 +51,8 @@ void	put_textures(t_game *game)
 				mlx_put_image_to_window(game->window->mlx_ptr,
 					game->window->win_ptr, game->textures->exit_open, x
 					* game->window->title_size, y * game->window->title_size);
+			else if (game->map->map[y][x] == 'M')
+				put_monster_texture(game, x, y);
 			x++;
 		}
 		y++;
@@ -71,12 +73,15 @@ t_textures	*textures_setup(t_game *game)
 	textures->player_down = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_down.xpm", &textures->width, &textures->height);
 	textures->player_left = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_left.xpm", &textures->width, &textures->height);
 	textures->player_right = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_right.xpm", &textures->width, &textures->height);
-	textures->monster_blue = mlx_xpm_file_to_image(win->mlx_ptr, "texxtures/test1/monster_blue.xpm", &textures->width, &textures->height);
-	textures->monster_red = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_red.xpm", &textures->width, &textures->height);
-	textures->monster_green = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_green.xpm", &textures->width, &textures->height);
-	textures->monster_yellow = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_yellow.xpm", &textures->width, &textures->height);
 	textures->exit_closed = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit_closed.xpm", &textures->width, &textures->height);
 	textures->exit_open = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit.xpm", &textures->width, &textures->height);
+textures->monster_blue = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
+	textures->monster_red = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
+	textures->monster_green = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
+	textures->monster_yellow = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
+	if (!textures->monster_yellow || !textures->monster_green
+		|| !textures->monster_red || !textures->monster_blue)
+		ft_exit_error("Error\nmonster_textures_setup failed");
 	if (!textures->floor || !textures->wall || !textures->collectible
 		|| !textures->player_up || !textures->player_down
 		|| !textures->player_left || !textures->player_right
@@ -114,4 +119,6 @@ void	redraw(t_game *game, int target_x, int target_y, char a)
 	if (new_cell == '1')
 		return ;
 	put_player_texture(game, target_x, target_y, a);
+	if (new_cell == 'M')
+	put_monster_texture(game, target_x, target_y);
 }
