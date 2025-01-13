@@ -47,6 +47,8 @@ void		free_all(t_game *game);
 void		free_map(t_game *game);
 void		free_textures(t_game *game);
 void		free_bfs(t_game *game);
+void		free_textures_bonus(t_game *game);
+void		free_monsters(t_game *game);
 
 //! find_player
 int			find_player_x(t_game *game);

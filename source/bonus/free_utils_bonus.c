@@ -39,6 +39,7 @@ void	free_all(t_game *game)
 	free_map(game);
 	if (game->window)
 		free(game->window);
+	free_monsters(game);
 	free(game);
 	game = NULL;
 }
@@ -66,7 +67,8 @@ void	free_textures(t_game *game)
 		mlx_destroy_image(mlx_ptr, game->textures->exit_closed);
 	if (game->textures->exit_open)
 		mlx_destroy_image(mlx_ptr, game->textures->exit_open);
-}
+	free_textures_bonus(game);
+		}
 
 void	free_map(t_game *game)
 {
@@ -86,4 +88,19 @@ void	free_map(t_game *game)
 	}
 	free(game->map);
 	game->map = NULL;
+}
+
+void	free_textures_bonus(t_game *game)
+{
+	void	*mlx_ptr;
+
+	mlx_ptr = game->window->mlx_ptr;
+	if (game->textures->monster_up)
+		mlx_destroy_image(mlx_ptr, game->textures->monster_up);
+	if (game->textures->monster_down)
+		mlx_destroy_image(mlx_ptr, game->textures->monster_down);
+	if (game->textures->monster_left)
+		mlx_destroy_image(mlx_ptr, game->textures->monster_left);
+	if (game->textures->monster_right)
+		mlx_destroy_image(mlx_ptr, game->textures->monster_right);
 }

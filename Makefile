@@ -132,7 +132,8 @@ BONUS_SRC = \
 	move_monster_bonus \
 	monster_move_utils_bonus \
 	ft_itoa_bonus \
-	move_count_bonus
+	move_count_bonus \
+	free_utils2_bonus
 
 # 1) monster => monster.c, 2) => source/bonus/monster.c
 BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))
