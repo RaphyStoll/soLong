@@ -6,11 +6,12 @@
 /*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:22:13 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 00:24:59 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/13 15:09:00 by raphaelferr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main/game.h"
+#include "../includes/main/fonction.h"
 #include "../includes/main/macro.h"
 #include "../mlx/mlx.h"
 
@@ -36,29 +37,17 @@ void	put_textures(t_game *game)
 		x = 0;
 		while (x < game->map->width)
 		{
-			mlx_put_image_to_window(game->window->mlx_ptr,
-				game->window->win_ptr, game->textures->floor, x
-				* game->window->title_size, y * game->window->title_size);
+			put_image_floor(game, x, y);
 			if (game->map->map[y][x] == '1')
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->wall, x
-					* game->window->title_size, y * game->window->title_size);
+				put_image_wall(game, x, y);
 			else if (game->map->map[y][x] == 'C')
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->collectible, x
-					* game->window->title_size, y * game->window->title_size);
+				put_image_collectible(game, x, y);
 			else if (game->map->map[y][x] == 'P')
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->player, x
-					* game->window->title_size, y * game->window->title_size);
+				put_image_player(game, x, y);
 			else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 0)
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->exit_closed, x
-					* game->window->title_size, y * game->window->title_size);
+				put_image_exit(game, x, y);
 			else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 1)
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->exit_open, x
-					* game->window->title_size, y * game->window->title_size);
+				put_image_exit(game, x, y);
 			x++;
 		}
 		y++;
@@ -96,29 +85,19 @@ t_textures	*textures_setup(t_game *game)
 void	redraw(t_game *game, int target_x, int target_y)
 {
 	t_map		*map;
-	t_window	*win;
-	t_textures	*textures;
 	char		old_cell;
 	char		new_cell;
 
 	map = game->map;
-	win = game->window;
-	textures = game->textures;
 	old_cell = map->map[map->old_player_y][map->old_player_x];
 	new_cell = map->map[map->player_y][map->player_x];
 	if (old_cell == '0')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->floor,
-			map->old_player_x * TILE_SIZE, map->old_player_y * TILE_SIZE);
+		put_image_floor(game, map->old_player_x, map->old_player_y);
 	else if (old_cell == 'C')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
-			textures->collectible, map->old_player_x * TILE_SIZE,
-			map->old_player_y * TILE_SIZE);
+		put_image_collectible(game, map->old_player_x, map->old_player_y);
 	else if (old_cell == 'E')
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr,
-			textures->exit_closed, map->old_player_x * TILE_SIZE,
-			map->old_player_y * TILE_SIZE);
+		put_image_exit(game, map->old_player_x, map->old_player_y);
 	if (new_cell == '1')
 		return ;
-	mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->player,
-		target_x * TILE_SIZE, target_y * TILE_SIZE);
+	put_image_player(game, target_x, target_y);
 }

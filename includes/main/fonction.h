@@ -136,4 +136,12 @@ int			print_keycode(int keycode, void *param);
 //! run win game
 void		run_win_game(t_game *game);
 
+//! one more line
+void put_image_wall(t_game *game, int x, int y);
+void put_image_collectible(t_game *game, int x, int y);
+void put_image_exit(t_game *game, int x, int y);
+void put_image_player(t_game *game, int x, int y);
+void put_image_floor(t_game *game, int x, int y);
+
+
 #endif

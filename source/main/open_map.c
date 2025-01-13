@@ -6,7 +6,7 @@
 /*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:42:01 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 00:52:12 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/13 14:50:46 by raphaelferr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ char	**read_map(int fd)
 	map = malloc(sizeof(char *) * 1000);
 	if (!map)
 		ft_exit_error("Error\nFailed to allocate memory for map");
-	while ((line = get_next_line(fd)) != NULL)
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
 		map[i++] = line;
+		line = get_next_line(fd);
 	}
 	map[i] = NULL;
 	return (map);

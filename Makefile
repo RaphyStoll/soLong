@@ -5,7 +5,7 @@ NAME_BONUS  = output/so_long_bonus
 
 # Compilateur et flags
 CC          = gcc
-CFLAGS      = -g -fsanitize=address -Wall -Wextra -Werror
+CFLAGS      = -g -Wall -Wextra -Werror
 
 # Commandes pratiques
 MKDIR       = mkdir -p
@@ -79,7 +79,8 @@ MAIN_SRC = \
     wall_validation \
     Were_you_move \
     window_close \
-    window_setup
+    window_setup \
+	one_more_line1
 
 # 1) On construit la liste de .c
 #    ex. main => main.c
