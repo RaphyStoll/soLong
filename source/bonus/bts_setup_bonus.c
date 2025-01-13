@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bts_setup_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:32:13 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 15:40:10 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
@@ -20,7 +32,7 @@ t_bfs	*bfs_setup(t_game *game)
 	game->bfs->queue_x = set_queue(game, 'x');
 	game->bfs->queue_y = set_queue(game, 'y');
 	game->bfs->start = 0;
-	game->bfs->end = 1; // 1 car pose du player en queue
+	game->bfs->end = 1;
 	game->bfs->dist = set_dist(game);
 	game->bfs->map = game->map->map;
 	game->bfs->found_items = 0;

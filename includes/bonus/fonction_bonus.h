@@ -77,6 +77,10 @@ void		put_textures(t_game *game);
 t_textures	*textures_init(t_game *game);
 void		redraw(t_game *game, int target_x, int target_y, char a);
 
+//! textures setup2
+void	textures_setup_monstrer(t_game *game);
+void	textures_setup_player(t_game *game);
+
 //! put_textures
 void 		put_player_texture(t_game *game, int target_x, int target_y, char a);
 void		put_monster_texture(t_game *game, int target_x, int target_y);
@@ -173,5 +177,13 @@ void draw_rectangle(t_game *game, int x, int y);
 
 //! rand
 int 		pseudo_random(int seed);
+
+//!one more line
+
+void		put_image_wall(t_game *game, int x, int y);
+void		put_image_collectible(t_game *game, int x, int y);
+void		put_image_exit(t_game *game, int x, int y);
+void		put_image_player(t_game *game, int x, int y);
+void		put_image_floor(t_game *game, int x, int y);
 
 #endif

@@ -1,27 +1,43 @@
-#include "../../mlx/mlx.h"
-#include "../includes/bonus/fonction_bonus.h"
-#include "../includes/bonus/game_bonus.h"
-#include "../includes/bonus/keymap_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keymap_setup_bonus.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:32:16 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 16:30:55 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/main/fonction.h"
+#include "../includes/main/game.h"
+#include "../includes/main/keymap.h"
+#include "../mlx/mlx.h"
+
+#ifdef __APPLE__
 
 t_keymap	*get_keymap(void)
 {
-#ifdef __APPLE__
 	return (get_macos_keymap());
-#elif __linux__
-	return (get_linux_keymap());
-#else
-	ft_exit_error("Error\nUnsupported OS");
-	return (NULL);
-#endif
 }
+
+#elif __linux__
+
+t_keymap	*get_keymap(void)
+{
+	return (get_linux_keymap());
+}
+
+#endif
 
 t_keymap	*get_macos_keymap(void)
 {
 	static t_keymap	macos_keymap[] = {{65307, close_window}, {119,
-			move_player_up}, {115, move_player_down}, {97, move_player_left},
-			{100, move_player_right}, {65362, move_player_up}, {65364,
-			move_player_down}, {65361, move_player_left}, {65363,
-			move_player_right}, {0, NULL}};
+		move_player_up}, {115, move_player_down}, {97, move_player_left},
+	{100, move_player_right}, {65362, move_player_up}, {65364,
+		move_player_down}, {65361, move_player_left}, {65363,
+		move_player_right}, {0, NULL}};
 
 	return (macos_keymap);
 }
@@ -29,10 +45,10 @@ t_keymap	*get_macos_keymap(void)
 t_keymap	*get_linux_keymap(void)
 {
 	static t_keymap	linux_keymap[] = {{65307, close_window}, {119,
-			move_player_up}, {115, move_player_down}, {97, move_player_left},
-			{100, move_player_right}, {65362, move_player_up}, {65364,
-			move_player_down}, {65361, move_player_left}, {65363,
-			move_player_right}, {0, NULL}};
+		move_player_up}, {115, move_player_down}, {97, move_player_left},
+	{100, move_player_right}, {65362, move_player_up}, {65364,
+		move_player_down}, {65361, move_player_left}, {65363,
+		move_player_right}, {0, NULL}};
 
 	return (linux_keymap);
 }

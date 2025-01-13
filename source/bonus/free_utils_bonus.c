@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_utils_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:32:29 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 16:38:31 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../mlx/mlx.h"
@@ -68,7 +80,7 @@ void	free_textures(t_game *game)
 	if (game->textures->exit_open)
 		mlx_destroy_image(mlx_ptr, game->textures->exit_open);
 	free_textures_bonus(game);
-		}
+}
 
 void	free_map(t_game *game)
 {

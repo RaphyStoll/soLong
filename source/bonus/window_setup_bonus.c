@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   window_setup_bonus.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:33:45 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 16:35:33 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../mlx/mlx.h"
@@ -52,7 +64,7 @@ int	get_monitor_size(t_game *game, char a)
 
 int	redraw_window(void *param)
 {
-	t_game *game;
+	t_game	*game;
 
 	game = (t_game *)param;
 	put_textures(game);

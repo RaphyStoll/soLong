@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_utils_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:33:11 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 15:36:10 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
@@ -8,6 +20,7 @@ bool	is_void_case(char **map, int x, int y)
 		return (true);
 	return (false);
 }
+
 bool	is_collectible(char **map, int x, int y)
 {
 	if (map[y][x] == 'C')

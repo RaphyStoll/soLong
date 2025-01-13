@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   textures_setup_bonus.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:33:32 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 16:29:01 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
@@ -25,19 +37,19 @@ void	put_textures(t_game *game)
 		x = 0;
 		while (x < game->map->width)
 		{
-			mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->floor, x * game->window->title_size, y * game->window->title_size);
+			put_image_floor(game, x, y);
 			if (game->map->map[y][x] == '1')
-				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->wall, x * game->window->title_size, y * game->window->title_size);
+				put_image_wall(game, x, y);
 			else if (game->map->map[y][x] == 'C')
-				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->collectible, x * game->window->title_size, y * game->window->title_size);
+				put_image_collectible(game, x, y);
 			else if (game->map->map[y][x] == 'P')
-				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->player_up, x * game->window->title_size, y * game->window->title_size);
+				put_image_player(game, x, y);
 			else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 0)
-				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->exit_closed, x * game->window->title_size, y * game->window->title_size);
+				put_image_exit(game, x, y);
 			else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 1)
-				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->exit_open, x * game->window->title_size, y * game->window->title_size);
+				put_image_exit(game, x, y);
 			else if (game->map->map[y][x] == 'M')
-			put_monster_texture(game, x, y);
+				put_monster_texture(game, x, y);
 			x++;
 		}
 	}
@@ -50,26 +62,24 @@ t_textures	*textures_setup(t_game *game)
 
 	win = game->window;
 	textures = game->textures;
-	textures->floor = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/background.xpm", &textures->width, &textures->height);
-	textures->wall = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/wall.xpm", &textures->width, &textures->height);
-	textures->collectible = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/collectable.xpm", &textures->width, &textures->height);
-	textures->player_up = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_up.xpm", &textures->width, &textures->height);
-	textures->player_down = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_down.xpm", &textures->width, &textures->height);
-	textures->player_left = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_left.xpm", &textures->width, &textures->height);
-	textures->player_right = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_right.xpm", &textures->width, &textures->height);
-	textures->exit_closed = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit_closed.xpm", &textures->width, &textures->height);
-	textures->exit_open = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit.xpm", &textures->width, &textures->height);
-	textures->monster_up = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
-	textures->monster_down = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_down_red.xpm", &textures->width, &textures->height);
-	textures->monster_right = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_right_red.xpm", &textures->width, &textures->height);
-	textures->monster_left = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_left_red.xpm", &textures->width, &textures->height);
+	textures->floor = mlx_xpm_file_to_image(win->mlx_ptr,
+			"textures/test1/background.xpm", &textures->width,
+			&textures->height);
+	textures->wall = mlx_xpm_file_to_image(win->mlx_ptr,
+			"textures/test1/wall.xpm", &textures->width, &textures->height);
+	textures->collectible = mlx_xpm_file_to_image(win->mlx_ptr,
+			"textures/test1/collectable.xpm", &textures->width,
+			&textures->height);
+	textures->exit_closed = mlx_xpm_file_to_image(win->mlx_ptr,
+			"textures/test1/exit_closed.xpm", &textures->width,
+			&textures->height);
+	textures->exit_open = mlx_xpm_file_to_image(win->mlx_ptr,
+			"textures/test1/exit.xpm", &textures->width, &textures->height);
 	if (!textures->floor || !textures->wall || !textures->collectible
-		|| !textures->player_up || !textures->player_down
-		|| !textures->player_left || !textures->player_right
-		|| !textures->monster_up || !textures->monster_down
-		|| !textures->monster_left || !textures->monster_right
 		|| !textures->exit_closed || !textures->exit_open)
 		ft_exit_error("Error\ntextures_setup failed");
+	textures_setup_player(game);
+	textures_setup_monstrer(game);
 	return (game->textures);
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   find_exit_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:32:18 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 15:40:29 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // find_player_x.c
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
@@ -32,12 +44,11 @@ int	find_exit_x(t_game *game)
 // Fonction pour trouver la position y du joueur 'P' sur la carte
 int	find_exit_y(t_game *game)
 {
-	int y;
-	int x;
+	int	y;
+	int	x;
 
 	if (!game->map || !game->map->map)
 		ft_exit_error("Error\nMap data is invalid");
-
 	y = 0;
 	while (y < game->map->height)
 	{

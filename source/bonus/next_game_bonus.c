@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   next_game_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:33:19 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 16:46:11 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../mlx/mlx.h"
 
 void	run_win_game(t_game *game)
 {
-	void *mlx_ptr;
-	void *win_ptr;
+	void	*mlx_ptr;
+	void	*win_ptr;
 
 	win_ptr = game->window->win_ptr;
 	mlx_ptr = game->window->mlx_ptr;
@@ -18,8 +30,8 @@ void	run_win_game(t_game *game)
 
 void	run_lose_game(t_game *game)
 {
-	void *mlx_ptr;
-	void *win_ptr;
+	void	*mlx_ptr;
+	void	*win_ptr;
 
 	win_ptr = game->window->win_ptr;
 	mlx_ptr = game->window->mlx_ptr;

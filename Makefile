@@ -133,7 +133,10 @@ BONUS_SRC = \
 	monster_move_utils_bonus \
 	ft_itoa_bonus \
 	move_count_bonus \
-	free_utils2_bonus
+	free_utils2_bonus \
+	textures_setup2_bonus \
+	one_more_line1_bonus \
+	one_more_line2_bonus
 
 # 1) monster => monster.c, 2) => source/bonus/monster.c
 BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))

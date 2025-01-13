@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:32:46 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 15:37:10 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../mlx/mlx.h"
 
 int	print_keycode(int keycode, void *param)
 {
-	(void)param; // Si vous n'utilisez pas de paramètres
+	(void)param;
 	ft_printf("Key pressed: %d\n", keycode);
 	return (0);
 }
@@ -25,7 +37,6 @@ t_game	*game_init(char **argv, t_game *game)
 	game->monster = monster_init(game);
 	game->keymap = get_keymap();
 	game->bfs = bfs_init(game);
-
 	if (!game || !game->map || !game->monster || !game->window
 		|| !game->textures || !game->keymap || !game->bfs)
 		ft_exit_error("Error\nt_game malloc failed");

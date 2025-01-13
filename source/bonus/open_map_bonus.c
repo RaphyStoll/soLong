@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   open_map_bonus.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:33:24 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 15:42:00 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../gnl/get_next_line.h"
 #include "../includes/bonus/fonction_bonus.h"
 
@@ -23,9 +35,11 @@ char	**read_map(int fd)
 	map = malloc(sizeof(char *) * 1000);
 	if (!map)
 		ft_exit_error("Error\nFailed to allocate memory for map");
-	while ((line = get_next_line(fd)) != NULL)
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
 		map[i++] = line;
+		line = get_next_line(fd);
 	}
 	map[i] = NULL;
 	return (map);

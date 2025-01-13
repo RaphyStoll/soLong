@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   monster_setup_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:33:01 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 15:41:36 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
@@ -35,12 +47,12 @@ t_monster	*load_monsters(t_game *game)
 
 t_monster	*monster_add(t_game *game, int x, int y)
 {
-	t_monster *new_m;
-	static int id;
+	t_monster	*new_m;
+	static int	id;
+
 	new_m = malloc(sizeof(t_monster));
 	if (!new_m)
 		ft_exit_error("Error\nmonster malloc failed");
-
 	new_m->id = id++;
 	new_m->x = x;
 	new_m->y = y;
