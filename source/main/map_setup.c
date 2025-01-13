@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_setup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:38:48 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:38:49 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/fonction.h"
 #include "../includes/main/maps.h"
 
@@ -15,9 +27,6 @@ t_map	*map_init(t_game *game, char *av)
 // set les valeurs de base de la structure map
 t_map	*map_setup(t_game *game, char *av)
 {
-	int	y;
-	int	x;
-
 	game->map->map_name = av;
 	game->map->moves = 0;
 	game->map->collected = 0;
@@ -34,17 +43,5 @@ t_map	*map_setup(t_game *game, char *av)
 	game->map->old_player_y = game->map->player_y;
 	game->map->exit_x = find_exit_x(game);
 	game->map->exit_y = find_exit_y(game);
-	//$
-	y = 0;
-	x = 0;
-	while (x < game->map->height)
-	{
-		y = 0;
-		while (y < game->map->width)
-		{
-			y++;
-		}
-		x++;
-	}
 	return (game->map);
 }

@@ -6,7 +6,6 @@ int	validate_rectangle(t_map map)
 {
 	int	y;
 
-	//$ ft_printf("=====is_rectangle====\n");
 	y = 0;
 	while (y < map.height)
 	{
@@ -14,6 +13,5 @@ int	validate_rectangle(t_map map)
 			return (false);
 		y++;
 	}
-	//$ ft_printf("====end===="); //$
 	return (true);
 }

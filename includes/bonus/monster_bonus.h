@@ -6,10 +6,10 @@
 typedef struct s_monster
 {
 	int id;
-	int monster_x;
-	int monster_y;
-	int old_monster_x;
-	int old_monster_y;
+	int x;
+	int y;
+	int old_x;
+	int old_y;
 	int dir;
 	struct s_monster *next;
 } t_monster;

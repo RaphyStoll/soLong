@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   window_setup.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:41:28 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:41:56 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/fonction.h"
 #include "../includes/main/game.h"
 #include "../mlx/mlx.h"
@@ -52,7 +64,7 @@ int	get_monitor_size(t_game *game, char a)
 
 int	redraw_window(void *param)
 {
-	t_game *game;
+	t_game	*game;
 
 	game = (t_game *)param;
 	put_textures(game);

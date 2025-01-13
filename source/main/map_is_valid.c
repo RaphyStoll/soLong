@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_is_valid.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:40:32 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:40:45 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/fonction.h"
 #include "../includes/main/macro.h"
 
@@ -47,6 +59,7 @@ int	have_other(t_map *map)
 	}
 	return (true);
 }
+
 void	valid_map(t_map *map)
 {
 	if (!have_other(map))

@@ -7,7 +7,6 @@ int	open_new_map(char *map_name)
 	int	fd;
 
 	fd = open(map_name, O_RDONLY);
-	//$ ft_printf("fd = %d\n", fd);
 	if (fd < 0)
 		ft_exit_error("Error\nFailed to open map file");
 	return (fd);

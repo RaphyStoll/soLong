@@ -157,6 +157,18 @@ int 		find_monster_y(t_game *game);
 void		monster_move(t_game *game);
 int			is_walkable(t_game *game, int x, int y);
 
+//! monster move utils
+void		move_monster_up(t_game *game, t_monster *current);
+void		move_monster_down(t_game *game, t_monster *current);
+void		move_monster_left(t_game *game, t_monster *current);
+void		move_monster_right(t_game *game, t_monster *current);
+
+//! itoa
+char	*ft_itoa(int n);
+
+void put_moves(t_game *game);
+void draw_rectangle(t_game *game, int x, int y);
+
 //! rand
 int 		pseudo_random(int seed);
 

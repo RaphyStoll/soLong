@@ -1,4 +1,15 @@
-#include "../includes/main/fonction.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   textures_setup.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:22:13 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:24:59 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/game.h"
 #include "../includes/main/macro.h"
 #include "../mlx/mlx.h"
@@ -74,13 +85,14 @@ t_textures	*textures_setup(t_game *game)
 	game->textures->exit_open = mlx_xpm_file_to_image(game->window->mlx_ptr,
 			"textures/test1/exit.xpm", &game->textures->width,
 			&game->textures->height);
-	if(game->textures->floor == NULL || game->textures->wall == NULL
+	if (game->textures->floor == NULL || game->textures->wall == NULL
 		|| game->textures->collectible == NULL || game->textures->player == NULL
 		|| game->textures->exit_closed == NULL
 		|| game->textures->exit_open == NULL)
 		ft_exit_error("Error\nTextures failed to load");
 	return (game->textures);
 }
+
 void	redraw(t_game *game, int target_x, int target_y)
 {
 	t_map		*map;

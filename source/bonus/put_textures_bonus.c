@@ -30,25 +30,19 @@ void	put_monster_texture(t_game *game, int target_x, int target_y)
 	t_textures *textures;
 	t_window *win;
 
-	ft_printf("x=%d ", target_x); //$
-	ft_printf("y=%d\n", target_y); //$
 	textures = game->textures;
 	win = game->window;
 	r = pseudo_random(seed++) % 4;
 	if (r == 0) {
-		ft_printf("blue skin\n"); //$
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_blue, target_x * TILE_SIZE, target_y * TILE_SIZE);
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_up, target_x * TILE_SIZE, target_y * TILE_SIZE);
 		}
 	else if (r == 1) {
-		ft_printf("red skin\n"); //$
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_red, target_x * TILE_SIZE, target_y * TILE_SIZE);
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_up, target_x * TILE_SIZE, target_y * TILE_SIZE);
 	}
 	else if (r == 2) {
-		ft_printf("green skin\n"); //$
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_green, target_x * TILE_SIZE, target_y * TILE_SIZE);
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_up, target_x * TILE_SIZE, target_y * TILE_SIZE);
 		}
 	else if (r == 3) {
-		ft_printf("yellow skin\n"); //$
-		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_yellow, target_x * TILE_SIZE, target_y * TILE_SIZE);
+		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, textures->monster_up, target_x * TILE_SIZE, target_y * TILE_SIZE);
 		}
 }

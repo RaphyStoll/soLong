@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_utils2.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:25:56 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:25:57 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/fonction.h"
 #include "../includes/main/game.h"
 
@@ -69,10 +81,8 @@ void	moved_in_a_collectible(t_game *game, int target_x, int target_y)
 			y = 0;
 			while (y < game->map->width)
 			{
-				ft_printf("%c", game->map->map[x][y]); //$
 				y++;
 			}
-			ft_printf("\n"); //$
 			x++;
 		}
 	}

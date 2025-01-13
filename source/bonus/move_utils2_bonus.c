@@ -69,10 +69,8 @@ void	moved_in_a_collectible(t_game *game, int target_x, int target_y, char a)
 			y = 0;
 			while (y < game->map->width)
 			{
-				ft_printf("%c", game->map->map[x][y]); //$
 				y++;
 			}
-			ft_printf("\n"); //$
 			x++;
 		}
 	}

@@ -9,11 +9,8 @@ t_textures	*textures_init(t_game *game)
 	game->textures = malloc(sizeof(t_textures));
 	if (!game->textures)
 		ft_exit_error("Error\nt_textures malloc failed");
-	ft_printf("==textures_init==\n"); //$
 	game->textures = textures_setup(game);
-	ft_printf("==textures_setup ok==\n"); //$
 	put_textures(game);
-	ft_printf("==textures_put ok==\n"); //$
 	return (game->textures);
 }
 
@@ -22,40 +19,27 @@ void	put_textures(t_game *game)
 	int	x;
 	int	y;
 
-	y = 0;
-	while (y < game->map->height)
+	y = -1;
+	while (y++, y < game->map->height)
 	{
 		x = 0;
 		while (x < game->map->width)
 		{
-			mlx_put_image_to_window(game->window->mlx_ptr,
-				game->window->win_ptr, game->textures->floor, x
-				* game->window->title_size, y * game->window->title_size);
+			mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->floor, x * game->window->title_size, y * game->window->title_size);
 			if (game->map->map[y][x] == '1')
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->wall, x
-					* game->window->title_size, y * game->window->title_size);
+				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->wall, x * game->window->title_size, y * game->window->title_size);
 			else if (game->map->map[y][x] == 'C')
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->collectible, x
-					* game->window->title_size, y * game->window->title_size);
+				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->collectible, x * game->window->title_size, y * game->window->title_size);
 			else if (game->map->map[y][x] == 'P')
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->player_up, x
-					* game->window->title_size, y * game->window->title_size);
+				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->player_up, x * game->window->title_size, y * game->window->title_size);
 			else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 0)
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->exit_closed, x
-					* game->window->title_size, y * game->window->title_size);
+				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->exit_closed, x * game->window->title_size, y * game->window->title_size);
 			else if (game->map->map[y][x] == 'E' && game->map->exit_isopen == 1)
-				mlx_put_image_to_window(game->window->mlx_ptr,
-					game->window->win_ptr, game->textures->exit_open, x
-					* game->window->title_size, y * game->window->title_size);
+				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->textures->exit_open, x * game->window->title_size, y * game->window->title_size);
 			else if (game->map->map[y][x] == 'M')
-				put_monster_texture(game, x, y);
+			put_monster_texture(game, x, y);
 			x++;
 		}
-		y++;
 	}
 }
 
@@ -75,18 +59,15 @@ t_textures	*textures_setup(t_game *game)
 	textures->player_right = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/ship_right.xpm", &textures->width, &textures->height);
 	textures->exit_closed = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit_closed.xpm", &textures->width, &textures->height);
 	textures->exit_open = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/exit.xpm", &textures->width, &textures->height);
-textures->monster_blue = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
-	textures->monster_red = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
-	textures->monster_green = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
-	textures->monster_yellow = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
-	if (!textures->monster_yellow || !textures->monster_green
-		|| !textures->monster_red || !textures->monster_blue)
-		ft_exit_error("Error\nmonster_textures_setup failed");
+	textures->monster_up = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_up_red.xpm", &textures->width, &textures->height);
+	textures->monster_down = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_down_red.xpm", &textures->width, &textures->height);
+	textures->monster_right = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_right_red.xpm", &textures->width, &textures->height);
+	textures->monster_left = mlx_xpm_file_to_image(win->mlx_ptr, "textures/test1/monster_left_red.xpm", &textures->width, &textures->height);
 	if (!textures->floor || !textures->wall || !textures->collectible
 		|| !textures->player_up || !textures->player_down
 		|| !textures->player_left || !textures->player_right
-		|| !textures->monster_blue || !textures->monster_red
-		|| !textures->monster_green || !textures->monster_yellow
+		|| !textures->monster_up || !textures->monster_down
+		|| !textures->monster_left || !textures->monster_right
 		|| !textures->exit_closed || !textures->exit_open)
 		ft_exit_error("Error\ntextures_setup failed");
 	return (game->textures);
@@ -119,6 +100,4 @@ void	redraw(t_game *game, int target_x, int target_y, char a)
 	if (new_cell == '1')
 		return ;
 	put_player_texture(game, target_x, target_y, a);
-	if (new_cell == 'M')
-	put_monster_texture(game, target_x, target_y);
 }

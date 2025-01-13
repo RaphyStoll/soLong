@@ -4,44 +4,29 @@
 
 void	monster_move(t_game *game)
 {
-	t_monster *current = game->monster;
-    int new_x, new_y;
+	t_monster *current;
+	int dir;
+	static int seed;
 
-    while (current)
-    {
-        // Exemple de logique de mouvement : un mouvement aléatoire
-		static int seed;
-        int direction = pseudo_random(seed++) % 4; // 0 = haut, 1 = bas, 2 = gauche, 3 = droite
-        new_x = current->monster_x;
-        new_y = current->monster_y;
-
-        if (direction == 0 && is_walkable(game, new_x, new_y - 1))
-            new_y--;
-        else if (direction == 1 && is_walkable(game, new_x, new_y + 1))
-            new_y++;
-        else if (direction == 2 && is_walkable(game, new_x - 1, new_y))
-            new_x--;
-        else if (direction == 3 && is_walkable(game, new_x + 1, new_y))
-            new_x++;
-
-        // Met à jour la position si le mouvement est valide
-        if (new_x != current->monster_x || new_y != current->monster_y)
-        {
-            current->old_monster_x = current->monster_x;
-            current->old_monster_y = current->monster_y;
-            current->monster_x = new_x;
-            current->monster_y = new_y;
-        }
-
-        current = current->next;
-    }
+	current = game->monster;
+	while (current)
+	{
+		dir = pseudo_random(seed++) % 4;
+			if (dir == 0 && is_walkable(game, current->x, current->y - 1))
+				move_monster_up(game, current);
+			else if (dir == 1 && is_walkable(game, current->x, current->y + 1))
+				move_monster_down(game, current);
+			else if (dir == 2 && is_walkable(game, current->x - 1, current->y))
+				move_monster_left(game, current);
+			else if (dir == 3 && is_walkable(game, current->x + 1, current->y))
+				move_monster_right(game, current);
+		current = current->next;
+	}
 }
 
 int is_walkable(t_game *game, int x, int y)
 {
-    if (x < 0 || x >= game->map->width || y < 0 || y >= game->map->height)
-        return (0);
-    if (game->map->map[y][x] == '1') // '1' représente un mur
-        return (0);
-    return (1); // Case libre
+	if (game->map->map[y][x] == '1' || game->map->map[y][x] == 'C' || game->map->map[y][x] == 'M')
+		return (0);
+	return (1);
 }

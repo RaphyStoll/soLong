@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bfs_algo.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:19:26 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:19:27 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/fonction.h"
 #include "../includes/main/game.h"
 #include "../includes/main/macro.h"
@@ -50,7 +62,7 @@ void	visit_neighbor(t_game *game, int nx, int ny)
 
 void	check_current_cell(t_game *game, int x, int y)
 {
-	char c;
+	char	c;
 
 	c = game->bfs->map[y][x];
 	if (c == 'C')

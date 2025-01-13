@@ -5,7 +5,7 @@ NAME_BONUS  = output/so_long_bonus
 
 # Compilateur et flags
 CC          = gcc
-CFLAGS      = -g -Wall -Wextra -Werror
+CFLAGS      = -g -fsanitize=address -Wall -Wextra -Werror
 
 # Commandes pratiques
 MKDIR       = mkdir -p
@@ -128,7 +128,10 @@ BONUS_SRC = \
 	put_textures_bonus \
 	rand_bonus \
 	move_utils3_bonus \
-	move_monster_bonus
+	move_monster_bonus \
+	monster_move_utils_bonus \
+	ft_itoa_bonus \
+	move_count_bonus
 
 # 1) monster => monster.c, 2) => source/bonus/monster.c
 BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))

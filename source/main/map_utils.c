@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 00:35:49 by raphaelferr       #+#    #+#             */
+/*   Updated: 2025/01/13 00:45:57 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/main/fonction.h"
 #include "../includes/main/maps.h"
 
@@ -10,10 +22,12 @@ int	count_lines(char *map_name)
 
 	lines_count = 0;
 	fd = open_new_map(map_name);
-	while ((line = get_next_line(fd)) != NULL)
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
 		free(line);
 		lines_count++;
+		line = get_next_line(fd);
 	}
 	close(fd);
 	return (lines_count);
@@ -88,9 +102,9 @@ int	count_exit(t_map *map)
 
 int	count_player(t_map *map)
 {
-	int y;
-	int x;
-	int count;
+	int	y;
+	int	x;
+	int	count;
 
 	count = 0;
 	y = 0;
