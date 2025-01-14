@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wall_validation_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:33:39 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:33:40 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	validate_wall(t_map *map)
 		ft_exit_error("Error\n1st column is not valid");
 	if (!validate_last_column(*map))
 		ft_exit_error("Error\nLast column is not valid");
-	return (true);
+	return (TRUE);
 }
 
 int	validate_first_line(t_map map)
@@ -39,10 +39,10 @@ int	validate_first_line(t_map map)
 	while (x < map.width)
 	{
 		if (map.map[0][x] != '1')
-			return (false);
+			return (FALSE);
 		x++;
 	}
-	return (true);
+	return (TRUE);
 }
 
 int	validate_last_line(t_map map)
@@ -53,10 +53,10 @@ int	validate_last_line(t_map map)
 	while (x < map.width)
 	{
 		if (map.map[map.height - 1][x] != '1')
-			return (false);
+			return (FALSE);
 		x++;
 	}
-	return (true);
+	return (TRUE);
 }
 
 int	validate_first_column(t_map map)
@@ -67,10 +67,10 @@ int	validate_first_column(t_map map)
 	while (y < map.height)
 	{
 		if (map.map[y][0] != '1')
-			return (false);
+			return (FALSE);
 		y++;
 	}
-	return (true);
+	return (TRUE);
 }
 
 int	validate_last_column(t_map map)
@@ -81,8 +81,8 @@ int	validate_last_column(t_map map)
 	while (y < map.height)
 	{
 		if (map.map[y][map.width - 1] != '1')
-			return (false);
+			return (FALSE);
 		y++;
 	}
-	return (true);
+	return (TRUE);
 }

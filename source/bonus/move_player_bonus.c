@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_player_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:33:09 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:33:10 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	move_player_up(t_game *game)
 	target_y = game->map->player_y - 1;
 	move_is_possible(game, target_x, target_y, 'U');
 	put_moves(game);
-	return (false);
+	return (FALSE);
 }
 
 int	move_player_down(t_game *game)
@@ -36,7 +36,7 @@ int	move_player_down(t_game *game)
 	target_y = game->map->player_y + 1;
 	move_is_possible(game, target_x, target_y, 'D');
 	put_moves(game);
-	return (false);
+	return (FALSE);
 }
 
 int	move_player_left(t_game *game)
@@ -48,7 +48,7 @@ int	move_player_left(t_game *game)
 	target_y = game->map->player_y;
 	move_is_possible(game, target_x, target_y, 'L');
 	put_moves(game);
-	return (false);
+	return (FALSE);
 }
 
 int	move_player_right(t_game *game)
@@ -60,5 +60,5 @@ int	move_player_right(t_game *game)
 	target_y = game->map->player_y;
 	move_is_possible(game, target_x, target_y, 'R');
 	put_moves(game);
-	return (false);
+	return (FALSE);
 }

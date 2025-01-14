@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   map_is_valid_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:50 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:32:51 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:23 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
 
-bool	have_item(t_map *map)
+BOOL	have_item(t_map *map)
 {
 	if (map->items > 0)
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
-bool	have_exit(t_map *map)
+BOOL	have_exit(t_map *map)
 {
 	if (map->exit == 1)
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
-bool	have_player(t_map *map)
+BOOL	have_player(t_map *map)
 {
 	if (map->player == 1)
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
 int	have_other(t_map *map)
@@ -51,13 +51,13 @@ int	have_other(t_map *map)
 				&& map->map[y][x] != '0' && map->map[y][x] != '1'
 				&& map->map[y][x] != 'E' && map->map[y][x] != 'M')
 			{
-				return (false);
+				return (FALSE);
 			}
 			x++;
 		}
 		y++;
 	}
-	return (true);
+	return (TRUE);
 }
 
 void	valid_map(t_map *map)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_item_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:21 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:40:45 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:53:49 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	find_item_x(t_game *game)
 		y++;
 	}
 	ft_exit_error("Error\nItem 'C' not found on the map");
-	return (default);
+	return (DEFAULT);
 }
 
 // Fonction pour trouver la position y du joueur 'P' sur la carte
@@ -64,5 +64,5 @@ int	find_item_y(t_game *game)
 		y++;
 	}
 	ft_exit_error("Error\nItem 'C' not found on the map");
-	return (default);
+	return (DEFAULT);
 }

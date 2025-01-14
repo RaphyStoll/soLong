@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks_setup_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:41 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 16:30:07 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	handle_key(int keycode, t_game *game)
 		{
 			game->keymap[i].action(game);
 			monster_move(game);
-			return (false);
+			return (FALSE);
 		}
 		i++;
 	}
 	ft_printf("keycode non mappée= %d\n", keycode);
-	return (false);
+	return (FALSE);
 }
 
 void	setup_hooks(t_game *game)

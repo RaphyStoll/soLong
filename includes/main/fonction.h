@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fonction.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:58:22 by raphalme          #+#    #+#             */
+/*   Updated: 2025/01/14 11:59:01 by raphalme         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FONCTION_H
-#define FONCTION_H
+# define FONCTION_H
 
 # include "game.h"
 # include "bfs.h"
@@ -20,19 +32,19 @@ t_map		*map_init(t_game *game, char *av);
 
 //! map is valid
 void		valid_map(t_map *map);
-bool		have_exit(t_map *map);
-bool		have_item(t_map *map);
-bool		have_player(t_map *map);
-bool		have_other(t_map *map);
+BOOL		have_exit(t_map *map);
+BOOL		have_item(t_map *map);
+BOOL		have_player(t_map *map);
+BOOL		have_other(t_map *map);
 
 //!bfs
-void	run_bfs(t_game *game);
-void	visit_neighbor(t_game *game, int nx, int ny);
-void	check_current_cell(t_game *game, int x, int y);
-t_bfs	*bfs_init(t_game *game);
-t_bfs	*bfs_setup(t_game *game);
-int	*set_queue(t_game *game, char a);
-int **set_dist(t_game *game);
+void		run_bfs(t_game *game);
+void		visit_neighbor(t_game *game, int nx, int ny);
+void		check_current_cell(t_game *game, int x, int y);
+t_bfs		*bfs_init(t_game *game);
+t_bfs		*bfs_setup(t_game *game);
+int			*set_queue(t_game *game, char a);
+int			**set_dist(t_game *game);
 
 //! map utils
 int			count_lines(char *map_name);
@@ -74,7 +86,6 @@ void		put_textures(t_game *game);
 t_textures	*textures_init(t_game *game);
 void		redraw(t_game *game, int target_x, int target_y);
 
-
 //! wall_validation
 int			validate_wall(t_map *map);
 int			validate_rectangle(t_map map);
@@ -113,11 +124,11 @@ int			move_player_left(t_game *game);
 int			move_player_right(t_game *game);
 
 //! move utils
-bool		is_void_case(char **map, int x, int y);
-bool		is_collectible(char **map, int x, int y);
-bool		is_exit_close(char **map, int x, int y);
-bool		is_exit_open(char **map, int x, int y);
-bool		is_wall(char **map, int x, int y);
+BOOL		is_void_case(char **map, int x, int y);
+BOOL		is_collectible(char **map, int x, int y);
+BOOL		is_exit_close(char **map, int x, int y);
+BOOL		is_exit_open(char **map, int x, int y);
+BOOL		is_wall(char **map, int x, int y);
 
 void		moved_in_a_void_case(t_game *game, int target_x, int target_y);
 void		moved_in_a_closed_exit(t_game *game, int target_x, int target_y);
@@ -129,7 +140,7 @@ void		move_is_possible(t_game *game, int target_x, int target_y);
 // utilitaire global
 //! utils
 int			ft_strcmp(char *s1, char *s2);
-void		ft_exit_error(char* message);
+void		ft_exit_error(char *message);
 int			ft_strlen(char *str);
 int			print_keycode(int keycode, void *param);
 
@@ -137,11 +148,10 @@ int			print_keycode(int keycode, void *param);
 void		run_win_game(t_game *game);
 
 //! one more line
-void put_image_wall(t_game *game, int x, int y);
-void put_image_collectible(t_game *game, int x, int y);
-void put_image_exit(t_game *game, int x, int y);
-void put_image_player(t_game *game, int x, int y);
-void put_image_floor(t_game *game, int x, int y);
-
+void		put_image_wall(t_game *game, int x, int y);
+void		put_image_collectible(t_game *game, int x, int y);
+void		put_image_exit(t_game *game, int x, int y);
+void		put_image_player(t_game *game, int x, int y);
+void		put_image_floor(t_game *game, int x, int y);
 
 #endif

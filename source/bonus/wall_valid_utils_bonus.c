@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wall_valid_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:33:37 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:33:38 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	validate_rectangle(t_map map)
 	while (y < map.height)
 	{
 		if ((int)ft_strlen(map.map[y]) != map.width)
-			return (false);
+			return (FALSE);
 		y++;
 	}
-	return (true);
+	return (TRUE);
 }

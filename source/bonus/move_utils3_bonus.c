@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_utils3_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:33:16 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:37:30 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:23 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "../includes/bonus/game_bonus.h"
 #include "../includes/bonus/macro_bonus.h"
 
-bool	is_monster(char **map, int x, int y)
+BOOL	is_monster(char **map, int x, int y)
 {
 	if (map[y][x] == 'M')
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
 void	moved_in_a_monster(t_game *game, char a)

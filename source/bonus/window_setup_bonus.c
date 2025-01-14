@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_setup_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:33:45 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 16:35:33 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	get_monitor_size(t_game *game, char a)
 		return (max_w);
 	else if (a == 'h')
 		return (max_h);
-	return (default);
+	return (DEFAULT);
 }
 
 int	redraw_window(void *param)
@@ -68,5 +68,5 @@ int	redraw_window(void *param)
 
 	game = (t_game *)param;
 	put_textures(game);
-	return (false);
+	return (FALSE);
 }

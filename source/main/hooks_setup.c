@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks_setup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:38:57 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 00:38:59 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	handle_key(int keycode, t_game *game)
 		if (game->keymap[i].keycode == keycode)
 		{
 			game->keymap[i].action(game);
-			return (false);
+			return (FALSE);
 		}
 		i++;
 	}
 	ft_printf("keycode non mappée= %d\n", keycode);
-	return (false);
+	return (FALSE);
 }
 
 void	setup_hooks(t_game *game)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:34:45 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 00:34:48 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	exit_is_open(t_game *game)
 			* game->window->title_size);
 		ft_printf("\033[36mPlayer collected all items\033[0m\n");
 		ft_printf("\033[36mexit is open\033[0m\n");
-		return (true);
+		return (TRUE);
 	}
-	return (false);
+	return (FALSE);
 }

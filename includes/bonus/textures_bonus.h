@@ -1,25 +1,37 @@
-#ifndef TEXTURES_BONUS_H
-#define TEXTURES_BONUS_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   textures_bonus.h                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 12:41:26 by raphalme          #+#    #+#             */
+/*   Updated: 2025/01/14 12:48:53 by raphalme         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "game_bonus.h"
+#ifndef TEXTURES_BONUS_H
+# define TEXTURES_BONUS_H
+
+# include "game_bonus.h"
 
 typedef struct s_textures {
-	void *player_up; //! P
-	void *player_down; //! P
-	void *player_left; //! P
-	void *player_right; //! P
-	void *wall; //! 1
-	void *floor; //! 0
-	void *collectible; //! C
-	void *exit_open; //! E
-	void *exit_closed; //! E
-	void *monster_up; //! M
-	void *monster_down; //! M
-	void *monster_left; //! M
-	void *monster_right; //! M
-	int width;
-	int height;
+	void	*player_up;
+	void	*player_down;
+	void	*player_left;
+	void	*player_right;
+	void	*wall;
+	void	*floor;
+	void	*collectible;
+	void	*exit_open;
+	void	*exit_closed;
+	void	*monster_up;
+	void	*monster_down;
+	void	*monster_left;
+	void	*monster_right;
+	int		width;
+	int		height;
 
-} t_textures;
+}	t_textures;
 
 #endif

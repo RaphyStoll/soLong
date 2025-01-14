@@ -1,18 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   textures.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:45:33 by raphalme          #+#    #+#             */
+/*   Updated: 2025/01/14 11:45:36 by raphalme         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TEXTURES_H
-#define TEXTURES_H
+# define TEXTURES_H
 
-#include "game.h"
+# include "game.h"
 
-typedef struct s_textures {
-	void *player; //! P
-	void *wall; //! 1
-	void *floor; //! 0
-	void *collectible; //! C
-	void *exit_open; //! E
-	void *exit_closed; //! E
-	int width;
-	int height;
+typedef struct s_textures
+{
+	void	*player;
+	void	*wall;
+	void	*floor;
+	void	*collectible;
+	void	*exit_open;
+	void	*exit_closed;
+	int		width;
+	int		height;
 
-} t_textures;
+}			t_textures;
 
 #endif

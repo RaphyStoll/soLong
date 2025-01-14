@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bfs_algo_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:16 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 16:46:25 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:01 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	run_bfs(t_game *game)
 		visit_neighbor(game, bfs->x, bfs->y + 1);
 		visit_neighbor(game, bfs->x, bfs->y - 1);
 	}
-	if (bfs->found_items == game->map->items && bfs->exit_found == true)
+	if (bfs->found_items == game->map->items && bfs->exit_found == TRUE)
 	{
 		ft_printf("bfs is valid\n");
 		free_bfs(game);
@@ -68,5 +68,5 @@ void	check_current_cell(t_game *game, int x, int y)
 	if (c == 'C')
 		game->bfs->found_items++;
 	else if (c == 'E')
-		game->bfs->exit_found = true;
+		game->bfs->exit_found = TRUE;
 }

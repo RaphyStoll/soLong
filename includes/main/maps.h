@@ -1,27 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   maps.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:46:15 by raphalme          #+#    #+#             */
+/*   Updated: 2025/01/14 11:54:23 by raphalme         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MAPS_H
-#define MAPS_H
+# define MAPS_H
 
-#include "game.h"
-#include "macro.h"
+# include "game.h"
+# include "macro.h"
 
-typedef struct s_map {
-	char	*map_name;	// nom de la map pour pouvoir l'ovrir
-	char	**map;       // map apres gnl
-	int		height;    // hauteur de la map
-	int		width;     // largeur de la map
-	int		collected;  // conte les items collecter par le joueur
-	int		moves;		// nombre de mouvements
-	int		objectif_moves;  //Nombre de pas minimum proposer par le BTS (sert de record a battre)
-	int		items;		// nombre d'items
-	int		player;		// nombre de joueurs (toujours 1)
-	int		player_x;	// position x du joueur
-	int		player_y;	// position y du joueur
+typedef struct s_map
+{
+	char	*map_name;
+	char	**map;
+	int		height;
+	int		width;
+	int		collected;
+	int		moves;
+	int		objectif_moves;
+	int		items;
+	int		player;
+	int		player_x;
+	int		player_y;
 	int		old_player_x;
 	int		old_player_y;
-	int		exit;		//nombre d'exit disponnible ( toujour 1)
-	int		exit_x;		// position x de la sortie 
-	int		exit_y;		// position y de la sortie
-	bool	exit_isopen; // 1 si sortie open, 0 sinon
-} t_map;
+	int		exit;
+	int		exit_x;
+	int		exit_y;
+	BOOL	exit_isopen;
+}			t_map;
 
 #endif

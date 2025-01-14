@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_textures_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:33:26 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 16:45:20 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:33:59 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,7 @@ void	put_monster_texture(t_game *game, int target_x, int target_y)
 {
 	int			r;
 	static int	seed;
-	t_textures	*textures;
-	t_window	*win;
 
-	textures = game->textures;
-	win = game->window;
 	r = pseudo_random(seed++) % 4;
 	if (r == 0)
 		put_monster_up(game, target_x, target_y);

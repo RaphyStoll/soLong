@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bts_setup_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:13 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:40:10 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_bfs	*bfs_setup(t_game *game)
 	game->bfs->dist = set_dist(game);
 	game->bfs->map = game->map->map;
 	game->bfs->found_items = 0;
-	game->bfs->exit_found = false;
+	game->bfs->exit_found = FALSE;
 	game->bfs->x = -1;
 	game->bfs->y = -1;
 	return (game->bfs);

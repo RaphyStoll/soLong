@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:40:49 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 00:40:50 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:12 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	move_player_up(t_game *game)
 	target_y = game->map->player_y - 1;
 	move_is_possible(game, target_x, target_y);
 	ft_printf("Moves = %d\n", game->map->moves);
-	return (false);
+	return (FALSE);
 }
 
 int	move_player_down(t_game *game)
@@ -35,7 +35,7 @@ int	move_player_down(t_game *game)
 	target_y = game->map->player_y + 1;
 	move_is_possible(game, target_x, target_y);
 	ft_printf("Moves = %d\n", game->map->moves);
-	return (false);
+	return (FALSE);
 }
 
 int	move_player_left(t_game *game)
@@ -47,7 +47,7 @@ int	move_player_left(t_game *game)
 	target_y = game->map->player_y;
 	move_is_possible(game, target_x, target_y);
 	ft_printf("Moves = %d\n", game->map->moves);
-	return (false);
+	return (FALSE);
 }
 
 int	move_player_right(t_game *game)
@@ -59,5 +59,5 @@ int	move_player_right(t_game *game)
 	target_y = game->map->player_y;
 	move_is_possible(game, target_x, target_y);
 	ft_printf("Moves = %d\n", game->map->moves);
-	return (false);
+	return (FALSE);
 }

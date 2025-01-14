@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_exit_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:18 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:40:29 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/14 11:53:49 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	find_exit_x(t_game *game)
 		y++;
 	}
 	ft_exit_error("Error\nExit 'E' not found on the map");
-	return (default);
+	return (DEFAULT);
 }
 
 // Fonction pour trouver la position y du joueur 'P' sur la carte
@@ -64,5 +64,5 @@ int	find_exit_y(t_game *game)
 		y++;
 	}
 	ft_exit_error("Error\nExit 'E' not found on the map");
-	return (default);
+	return (DEFAULT);
 }

@@ -1,24 +1,36 @@
-#ifndef BSF_H
-# define BSF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bfs.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 12:01:50 by raphalme          #+#    #+#             */
+/*   Updated: 2025/01/14 12:02:26 by raphalme         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "game.h"
-#include "macro.h"
+#ifndef BFS_H
+# define BFS_H
+
+# include "game.h"
+# include "macro.h"
 
 typedef struct s_bfs
 {
-	int		width;    		//Largeur de la map
-	int		height;   		//Hauteur de la map
-	char	**map;			//copy de la map pour eviter tout changent sur la map jouable
-	int		**dist;			//Tableau 2D par defaut -1 = pas visiter et >0 = distance
-	int		*queue_x;		//Tableau qui stock la file en x
-	int		*queue_y;		//Tableau qui stock la file en y
-	int		start;			//indice de debut de la file
-	int		end;			//indice de fin de la file
-	int		queue_size;		//Capaciter max de la file
-	int		found_items;	// nombre d'items decouvert
+	int		width;
+	int		height;
+	char	**map;
+	int		**dist;
+	int		*queue_x;
+	int		*queue_y;
+	int		start;
+	int		end;
+	int		queue_size;
+	int		found_items;
 	int		y;
 	int		x;
-	bool	exit_found;		//indique si la sortie a ete localiser
-}	t_bfs;
+	BOOL	exit_found;
+}			t_bfs;
 
 #endif
