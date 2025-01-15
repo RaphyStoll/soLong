@@ -6,7 +6,7 @@
 /*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:59 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 16:38:13 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/15 13:42:32 by raphaelferr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 void	move_monster_up(t_game *game, t_monster *current)
 {
+	exit_is_open(game);
 	current->y -= 1;
 	if (game->map->map[current->y][current->x] == 'P')
 	{
@@ -34,6 +35,7 @@ void	move_monster_up(t_game *game, t_monster *current)
 
 void	move_monster_down(t_game *game, t_monster *current)
 {
+	exit_is_open(game);
 	current->y += 1;
 	if (game->map->map[current->y][current->x] == 'P')
 	{
@@ -51,6 +53,7 @@ void	move_monster_down(t_game *game, t_monster *current)
 
 void	move_monster_left(t_game *game, t_monster *current)
 {
+	exit_is_open(game);
 	current->x -= 1;
 	if (game->map->map[current->y][current->x] == 'P')
 	{
@@ -68,6 +71,7 @@ void	move_monster_left(t_game *game, t_monster *current)
 
 void	move_monster_right(t_game *game, t_monster *current)
 {
+	exit_is_open(game);
 	current->x += 1;
 	if (game->map->map[current->y][current->x] == 'P')
 	{

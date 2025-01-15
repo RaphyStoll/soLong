@@ -6,13 +6,14 @@
 /*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:32:46 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/01/13 15:37:10 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2025/01/15 13:22:01 by raphaelferr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bonus/fonction_bonus.h"
 #include "../includes/bonus/game_bonus.h"
 #include "../mlx/mlx.h"
+#include <time.h>
 
 int	print_keycode(int keycode, void *param)
 {
@@ -48,6 +49,7 @@ int	main(int argc, char **argv)
 {
 	t_game	*game;
 
+	srand(time(NULL));
 	arg_verif(argc);
 	game = NULL;
 	game = game_init(argv, game);
